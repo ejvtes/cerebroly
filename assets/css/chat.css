@@ -1,0 +1,402 @@
+/**
+ * ========== INTELLIWP CHAT BASE STYLES ==========
+ * Base CSS framework for Cerebroly chat themes
+ * Provides structure, layout, and responsive behavior
+ * Theme-specific colors and styling should be added separately
+ * 
+ * @author Eduardo Vega https://eduardovega.net
+ * @version 1.5.2
+ * @package Cerebroly
+ */
+
+/* ========== FONT CONFIGURATION ========== */
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* Enable ligatures and contextual alternates */
+}
+
+/* Variable font fallback for modern browsers */
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: InterVariable, sans-serif;
+    }
+}
+
+/* ========== LAYOUT FOUNDATION ========== */
+
+/**
+ * Main messages container
+ * Provides flexible layout and scroll management
+ */
+.container-messages {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    height: 98%;
+    overflow: auto;
+}
+
+/**
+ * Chat messages wrapper
+ * Handles message display and positioning
+ */
+chat-messages {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+/* ========== CHAT STATE LAYOUTS ========== */
+
+/**
+ * Medium state layout adjustments
+ * Used when chat is opened but not fullscreen
+ */
+.medium chat-messages {
+    height: 85%;
+    top: -60px;
+}
+
+/**
+ * Fullscreen state layout
+ * Optimized for maximum screen usage
+ */
+.fullscreen chat-messages {
+    overflow-y: visible;
+    height: 85vh;
+    padding-top: 0;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+/**
+ * Centered content wrapper for fullscreen mode
+ * Maintains readable width on large screens
+ */
+.fullscreen chat-messages .messages-content-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ========== INPUT VISIBILITY CONTROLS ========== */
+
+/**
+ * Show input in medium and fullscreen states
+ * Hidden by default in closed state
+ */
+.medium chat-input,
+.fullscreen chat-input {
+    display: block !important;
+}
+
+/* ========== UI COMPONENTS ========== */
+
+/**
+ * Disclaimer text at bottom of chat
+ * Used for branding or legal text
+ */
+.disclaimer {
+    max-width: 700px;
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 10px;
+    opacity: 0.6;
+}
+
+/**
+ * Input container layout
+ * Handles input field and button alignment
+ */
+.container-input {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/**
+ * SVG icon styling
+ * Consistent sizing and color inheritance
+ */
+svg.icon {
+    width: 16px;
+    height: auto;
+    position: relative;
+    fill: currentColor;
+}
+
+/**
+ * Typing indicator for messages
+ * Used during message composition
+ */
+.typing-indicator {
+    display: inline-block;
+}
+
+/**
+ * Status indicator overlay
+ * Shows system messages and notifications
+ */
+#status-indicator {
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+    font-style: italic;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    pointer-events: none;
+    display: none;
+}
+
+/* ========== FULLSCREEN BEHAVIOR ========== */
+
+/**
+ * Prevent page scroll when chat is fullscreen
+ * Ensures proper modal-like behavior
+ */
+body.fullscreen-chat {
+    overflow: hidden;
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/**
+ * Mobile and tablet responsive adjustments
+ * Optimized for touch interfaces and smaller screens
+ */
+@media screen and (max-width: 768px) {
+    /* Chat container positioning for mobile */
+    chat-container {
+        position: fixed !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Closed state mobile positioning */
+    chat-container.closed {
+        position: fixed !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: 20px !important;
+        right: 20px !important;
+
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    /* Medium state mobile layout */
+    chat-container.medium {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        left: 20px !important;
+        width: auto !important;
+        height: 400px !important;
+    }
+
+    /* Fullscreen state mobile layout */
+    chat-container.fullscreen {
+
+        overflow: hidden;
+        position: fixed;
+        top: auto !important;
+        bottom: 0px !important;
+        right: 0px !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    chat-container.fullscreen .container-messages {
+        height: auto!important;
+        overflow-y: auto;
+    }
+
+    chat-container.fullscreen chat-input {
+        position: sticky !important;
+        bottom: 0 !important;
+        z-index: 10 !important;
+    }
+
+    /* Mobile message content sizing */
+    .message-content {
+        max-width: 85%;
+        margin: 0 40px;
+        font-size: 14px;
+    }
+
+    /* Mobile avatar sizing */
+    .icon-user,
+    .icon-bot {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}
+
+/* ========== MESSAGE CONTENT FORMATTING ========== */
+
+/**
+ * HTML content styling within messages
+ * Supports rich text formatting for bot responses
+ */
+
+/* Heading styles */
+.message-content h1,
+.message-content h2,
+.message-content h3,
+.message-content h4,
+.message-content h5,
+.message-content h6 {
+    margin: 0.8em 0 0.4em 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.message-content h1 { font-size: 1.5em; }
+.message-content h2 { font-size: 1.3em; }
+.message-content h3 { font-size: 1.1em; }
+.message-content h4 { font-size: 1em; font-weight: 600; }
+.message-content h5 { font-size: 0.9em; font-weight: 600; }
+.message-content h6 { font-size: 0.8em; font-weight: 600; }
+
+/* Text formatting */
+.message-content strong,
+.message-content b {
+    font-weight: 600;
+}
+
+.message-content em,
+.message-content i {
+    font-style: italic;
+}
+
+/* Link styling */
+.message-content a {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.message-content a:hover {
+    opacity: 0.8;
+}
+
+/* List styling */
+.message-content ul,
+.message-content ol {
+    margin: 0.5em 0;
+    padding-left: 1.2em;
+}
+
+chat-message ul,
+chat-message ol {
+    padding-left: 1rem;
+}
+
+.message-content li {
+    margin: 0.2em 0;
+    line-height: 1.4;
+}
+
+.message-content ul li {
+    list-style-type: disc;
+}
+
+.message-content ol li {
+    list-style-type: decimal;
+}
+
+/* Quote and citation styling */
+.message-content blockquote,
+.message-content cite {
+    margin: 0.8em 0;
+    padding: 0.5em 0.8em;
+    border-left: 3px solid;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Code formatting */
+.message-content code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+.message-content pre {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    padding: 0.8em;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 0.5em 0;
+}
+
+/* Image styling */
+.message-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0.5em 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraph and line break styling */
+.message-content p {
+    margin: 0.5em 0;
+    line-height: 1.5;
+}
+
+.message-content br {
+    line-height: 1.5;
+}
+
+/* ========== MOBILE HTML CONTENT ADJUSTMENTS ========== */
+
+/**
+ * Responsive adjustments for rich content on mobile devices
+ */
+@media screen and (max-width: 768px) {
+    .message-content h1 { font-size: 1.3em; }
+    .message-content h2 { font-size: 1.2em; }
+    .message-content h3 { font-size: 1.05em; }
+    
+    .message-content img {
+        border-radius: 6px;
+    }
+    
+    .message-content ul,
+    .message-content ol {
+        padding-left: 1em;
+    }
+}

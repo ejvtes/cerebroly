@@ -1,0 +1,379 @@
+/**
+ * SienteGrowth Theme for Cerebroly Chat
+ * Corporate orange theme with modern design
+ */
+
+/* =================================================================
+   VARIABLES CSS - Orange corporate colors
+   ================================================================= */
+
+:root {
+    --siente-primary: #ff4802;
+    --siente-secondary: #ff4802;
+    --siente-accent: #ff4802;
+    --siente-light: #fff4f1;
+    --siente-lighter: #fffaf9;
+    --siente-dark: #cc3600;
+    --siente-darker: #991a00;
+    --siente-gradient: linear-gradient(135deg, #ff4802 0%, #ff6b33 100%);
+    --siente-shadow: 0 8px 32px rgba(255, 72, 2, 0.25);
+    --siente-border: rgba(255, 72, 2, 0.2);
+}
+
+/* =================================================================
+   CHAT CONTAINER - Contenedor principal del chat
+   ================================================================= */
+
+/* Estado cerrado (botón flotante) */
+:host(.theme-sientegrowth-theme.closed) {
+    background: var(--siente-gradient);
+    box-shadow: var(--siente-shadow);
+    border: 2px solid var(--siente-secondary);
+}
+
+:host(.theme-sientegrowth-theme.closed):hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(255, 72, 2, 0.35);
+}
+
+:host(.theme-sientegrowth-theme.closed)::after {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Estados abierto (medium y fullscreen) */
+:host(.theme-sientegrowth-theme) {
+    background: var(--siente-lighter);
+    box-shadow: var(--siente-shadow);
+    border: 1px solid var(--siente-border);
+    border-radius: 1rem;
+}
+
+/* Barra de controles superior */
+:host(.theme-sientegrowth-theme) .controls {
+    background: var(--siente-gradient);
+    box-shadow: 0 4px 20px rgba(255, 72, 2, 0.3);
+    border-bottom: 0px solid var(--siente-secondary);
+}
+
+:host(.theme-sientegrowth-theme) .controls .logoIntelli {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+/* Botones de controles (minimizar, fullscreen, cerrar) */
+:host(.theme-sientegrowth-theme) .controls button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+:host(.theme-sientegrowth-theme) .controls button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+:host(.theme-sientegrowth-theme) .controls button:hover svg {
+    fill: white !important;
+}
+
+/* =================================================================
+   CHAT INPUT - Campo de entrada de mensajes
+   ================================================================= */
+
+/* Contenedor del input */
+:host(.theme-sientegrowth-theme) {
+    background: var(--siente-gradient);
+    border-top:0px solid var(--siente-secondary);
+}
+
+/* Campo de texto */
+:host(.theme-sientegrowth-theme) input {
+    border: 2px solid var(--siente-border);
+    background: white;
+    color: var(--siente-darker);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+:host(.theme-sientegrowth-theme) input:focus {
+    outline: 2px solid var(--siente-secondary);
+    outline-offset: 2px;
+    border-color: var(--siente-accent);
+    box-shadow: 0 0 0 4px rgba(255, 72, 2, 0.1);
+}
+
+:host(.theme-sientegrowth-theme) input::placeholder {
+    color: rgba(204, 54, 0, 0.6);
+}
+
+/* Botón de enviar */
+:host(.theme-sientegrowth-theme) button {
+    background: white;
+    color: var(--siente-primary);
+    border: 2px solid var(--siente-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+:host(.theme-sientegrowth-theme) button:hover {
+    background: var(--siente-light);
+    border-color: var(--siente-secondary);
+    box-shadow: 0 4px 12px rgba(255, 72, 2, 0.2);
+}
+
+/* Iconos del botón */
+:host(.theme-sientegrowth-theme) button svg.icon {
+    fill: var(--siente-primary) !important;
+    transition: fill 0.3s ease;
+}
+
+:host(.theme-sientegrowth-theme) button:hover svg.icon {
+    fill: var(--siente-accent) !important;
+}
+
+/* Estados específicos del botón */
+:host(.theme-sientegrowth-theme) button.btn-send svg.icon {
+    fill: var(--siente-primary) !important;
+}
+
+:host(.theme-sientegrowth-theme) button.btn-send:hover svg.icon {
+    fill: var(--siente-dark) !important;
+}
+
+:host(.theme-sientegrowth-theme) button.btn-stop svg.icon {
+    fill: #e74c3c !important;
+}
+
+:host(.theme-sientegrowth-theme) button.btn-stop:hover svg.icon {
+    fill: #c0392b !important;
+}
+
+/* Spinner de carga */
+:host(.theme-sientegrowth-theme) .spinner {
+    border: 2px solid rgba(255, 72, 2, 0.3);
+    border-top-color: var(--siente-accent);
+}
+
+/* =================================================================
+   CHAT MESSAGES - Contenedor de mensajes
+   ================================================================= */
+
+/* Contenedor principal de mensajes */
+:host(.theme-sientegrowth-theme) {
+    background: var(--siente-lighter);
+}
+
+/* Indicador de scroll */
+:host(.theme-sientegrowth-theme) .scroll-indicator {
+    background: var(--siente-gradient);
+    color: white;
+    box-shadow: var(--siente-shadow);
+    border: 2px solid var(--siente-secondary);
+}
+
+:host(.theme-sientegrowth-theme) .scroll-indicator:hover {
+    background: var(--siente-dark);
+    transform: scale(1.1);
+}
+
+/* =================================================================
+   MENSAJES INDIVIDUALES
+   ================================================================= */
+
+/* Contenido base de mensajes */
+:host(.theme-sientegrowth-theme) .message-content,
+:host(.theme-sientegrowth-theme[sender="user"]) .message-content,
+:host(.theme-sientegrowth-theme[sender="bot"]) .message-content {
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(255, 72, 2, 0.1);
+    border: none;
+    font-weight: 500;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* Mensajes del usuario */
+:host(.theme-sientegrowth-theme) .user-message .message-content,
+:host(.theme-sientegrowth-theme[sender="user"]) .message-content {
+    background: var(--siente-gradient);
+    color: white;
+    text-align: right;
+    margin-left: 15%;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensajes del bot */
+:host(.theme-sientegrowth-theme) .bot-message .message-content,
+:host(.theme-sientegrowth-theme[sender="bot"]) .message-content {
+    background: white;
+    color: var(--siente-darker);
+    text-align: left;
+    margin-right: 15%;
+    border: 2px solid var(--siente-border);
+}
+
+/* =================================================================
+   AVATARES
+   ================================================================= */
+
+/* Avatar base */
+:host(.theme-sientegrowth-theme) .icon-user,
+:host(.theme-sientegrowth-theme) .icon-bot {
+    border: 3px solid white;
+    box-shadow: 0 4px 12px rgba(255, 72, 2, 0.2);
+    font-weight: bold;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Avatar del usuario */
+:host(.theme-sientegrowth-theme) .icon-user {
+    background: var(--siente-gradient);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Avatar del bot */
+:host(.theme-sientegrowth-theme) .icon-bot {
+    background: white;
+    color: var(--siente-primary);
+    border-color: var(--siente-secondary);
+}
+
+/* Hover en avatares */
+:host(.theme-sientegrowth-theme) .icon-user:hover,
+:host(.theme-sientegrowth-theme) .icon-bot:hover {
+}
+
+/* =================================================================
+   ANIMACIONES Y EFECTOS
+   ================================================================= */
+
+/* Animación de entrada de mensajes */
+:host(.theme-sientegrowth-theme) .chat-message {
+    animation: sienteSlideIn 0.4s ease-out;
+}
+
+@keyframes sienteSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Efecto hover en mensajes */
+:host(.theme-sientegrowth-theme) .message-content:hover {
+    box-shadow: 0 6px 24px rgba(255, 72, 2, 0.15);
+}
+
+/* Indicador de typing */
+:host(.theme-sientegrowth-theme) .loading-dot {
+    background: var(--siente-accent);
+    box-shadow: 0 0 4px rgba(255, 72, 2, 0.3);
+}
+
+/* =================================================================
+   RESPONSIVE DESIGN
+   ================================================================= */
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+    :host(.theme-sientegrowth-theme) .message-content {
+        border-radius: 12px;
+        font-size: 14px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    
+    :host(.theme-sientegrowth-theme) .icon-user,
+    :host(.theme-sientegrowth-theme) .icon-bot {
+        width: 32px;
+        height: 32px;
+        font-size: 10px;
+    }
+}
+
+/* =================================================================
+   ESTADOS ESPECIALES
+   ================================================================= */
+
+/* Cuando el chat está deshabilitado */
+:host(.theme-sientegrowth-theme[disabled]) input {
+    background: rgba(255, 244, 241, 0.5);
+    color: rgba(204, 54, 0, 0.5);
+    cursor: not-allowed;
+}
+
+:host(.theme-sientegrowth-theme[disabled]) button {
+    background: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+}
+
+/* Estado de error */
+:host(.theme-sientegrowth-theme) .error-message {
+    background: #ffe6e6;
+    color: #c0392b;
+    border: 2px solid #e74c3c;
+    border-radius: 12px;
+}
+
+/* Estado de éxito */
+:host(.theme-sientegrowth-theme) .success-message {
+    background: #e8f8f5;
+    color: #27ae60;
+    border: 2px solid #2ecc71;
+    border-radius: 12px;
+}
+
+/* =================================================================
+   EFECTOS ESPECIALES PARA MARCA SIENTEGROWTH
+   ================================================================= */
+
+/* Gradiente animado en hover del botón flotante */
+:host(.theme-sientegrowth-theme.closed):hover {
+    background: linear-gradient(135deg, #ff4802 0%, #ff6b33 50%, #ff8c5a 100%);
+    animation: sienteGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes sienteGlow {
+    from {
+        box-shadow: 0 8px 32px rgba(255, 72, 2, 0.3);
+    }
+    to {
+        box-shadow: 0 12px 40px rgba(255, 72, 2, 0.5);
+    }
+}
+
+/* Acento naranja en elementos interactivos */
+:host(.theme-sientegrowth-theme) *:focus {
+    outline-color: var(--siente-primary);
+}
+
+/* Scrollbar personalizado */
+:host(.theme-sientegrowth-theme) ::-webkit-scrollbar {
+    width: 6px;
+}
+
+:host(.theme-sientegrowth-theme) ::-webkit-scrollbar-track {
+    background: var(--siente-light);
+}
+
+:host(.theme-sientegrowth-theme) ::-webkit-scrollbar-thumb {
+    background: var(--siente-primary);
+    border-radius: 3px;
+}
+
+:host(.theme-sientegrowth-theme) ::-webkit-scrollbar-thumb:hover {
+    background: var(--siente-dark);
+}

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerebroly Chat</title>
+    <script>
+        // Global variables for URL handling
+        window.urlParams = new URLSearchParams(window.location.search);
+        window.siteUrl = window.urlParams.get('site') || '';
+        const isDebugMode = window.urlParams.get('debug') === 'true' || window.CEREBROLY_DEBUG;
+        
+        // Load CSS based on debug mode
+        if (window.siteUrl) {
+            if (isDebugMode) {
+                // DEVELOPMENT - Load individual CSS files
+                // First load base chat.css
+                const chatCssLink = document.createElement('link');
+                chatCssLink.rel = 'stylesheet';
+                chatCssLink.href = `${window.siteUrl}/wp-content/plugins/Cerebroly/assets/css/chat.css`;
+                document.head.appendChild(chatCssLink);
+                
+                // Then load active theme dynamically after getting config from backend
+                fetch(`${window.siteUrl}/wp-json/cerebroly/v1/appearance-config`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success && data.theme) {
+                            const themeCssLink = document.createElement('link');
+                            themeCssLink.rel = 'stylesheet';
+                            themeCssLink.href = `${window.siteUrl}/wp-content/plugins/Cerebroly/assets/css/themes/${data.theme}.css`;
+                            document.head.appendChild(themeCssLink);
+                        }
+                    })
+                    .catch(error => {
+                        console.warn('Could not load theme config, using default:', error);
+                        // Fallback to default theme
+                        const themeCssLink = document.createElement('link');
+                        themeCssLink.rel = 'stylesheet';
+                        themeCssLink.href = `${window.siteUrl}/wp-content/plugins/Cerebroly/assets/css/themes/cerebroly-theme.css`;
+                        document.head.appendChild(themeCssLink);
+                    });
+            } else {
+                // PRODUCTION - Load bundle
+                const cssLink = document.createElement('link');
+                cssLink.rel = 'stylesheet';
+                cssLink.href = `${window.siteUrl}/wp-content/plugins/cerebroly/dist/chat-bundle.css`;
+                document.head.appendChild(cssLink);
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: transparent;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #cerebroly-chat {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Specific styles for iframe chat */
+        .container-messages {
+            overflow: hidden !important;
+        }
+
+        #fullscreen {
+            display: none !important;
+            /* Hide fullscreen button in iframe */
+        }
+
+        .medium chat-messages {
+            top: 0 !important;
+        }
+
+        /* Chat message styles for iframe - these need to be in the document head since Shadow DOM creates elements */
+        .chat-message .message-content {
+            padding: 12px 15px;
+            max-width: 75%;
+            border-radius: 6px;
+            position: relative;
+            margin: 0 50px;
+            display: inline-block;
+            word-break: break-word;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            line-height: 1.4rem;
+            font-size: 1rem;
+        }
+
+        /* User Messages - Default theme */
+        .chat-message.user-message .message-content {
+            background-color: #f0fbe8;
+            color: #2b5c14;
+            text-align: right;
+        }
+
+        /* Bot Messages - Default theme */
+        .chat-message.bot-message .message-content {
+            background-color: #ecf7fd;
+            color: #123c5d;
+            text-align: left;
+        }
+
+        /* Avatars - Default theme */
+        .chat-message .icon-user,
+        .chat-message .icon-bot {
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 2;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-message .icon-user {
+            background-color: #f0fbe8;
+            color: #2b5c14;
+            right: 0;
+        }
+
+        .chat-message .icon-bot {
+            background-color: #ecf7fd;
+            color: #123c5d;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cerebroly-chat">
+        <!-- This chat is generated by Cerebroly plugin https://cerebroly.com/ -->
+        <chat-container style="visibility: hidden;">
+            <chat-input id="chat-input" endpoint="" placeholder="Type your question...">
+            </chat-input>
+            <div class="container-messages">
+                <chat-messages id="chat-messages"></chat-messages>
+                <div id="status-indicator"></div>
+            </div>
+            <div class="disclaimer"></div>
+        </chat-container>
+    </div>
+
+    <!-- Load scripts based on debug mode -->
+    <script>
+        // Use debug mode already defined above
+        
+        if (isDebugMode) {
+            // DEVELOPMENT - Load individual files
+            // Use global siteUrl variable
+            
+            const scripts = [
+                `${window.siteUrl}/wp-content/plugins/cerebroly/assets/components/ThemeLoader.js`,
+                `${window.siteUrl}/wp-content/plugins/cerebroly/assets/components/ChatContainer.js`,
+                `${window.siteUrl}/wp-content/plugins/cerebroly/assets/components/ChatMessages.js`, 
+                `${window.siteUrl}/wp-content/plugins/cerebroly/assets/components/ChatMessage.js`,
+                `${window.siteUrl}/wp-content/plugins/cerebroly/assets/components/ChatInput.js`
+            ];
+            
+            // Load scripts sequentially to ensure proper order
+            async function loadScriptsSequentially() {
+                for (const src of scripts) {
+                    const script = document.createElement('script');
+                    script.src = src;
+                    script.defer = false; // Load synchronously for proper order
+                    document.head.appendChild(script);
+                    
+                    // Wait for script to load before continuing
+                    await new Promise((resolve, reject) => {
+                        script.onload = resolve;
+                        script.onerror = reject;
+                    });
+                }
+            }
+            
+            loadScriptsSequentially().catch(console.error);
+        } else {
+            // PRODUCTION - Load bundle
+            const script = document.createElement('script');
+            script.src = `${window.siteUrl}/wp-content/plugins/cerebroly/dist/chat-bundle.js`;
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+    </script>
+
+   
+
+    <script>
+        // Use global variables defined above
+        if (!window.siteUrl) {
+            document.getElementById('cerebroly-chat').innerHTML =
+                '<div style="text-align: center; padding: 20px; color: #d63638;">Error: Site URL not specified</div>';
+        } else {
+            // Initialize chat asynchronously
+            (async function initializeChat() {
+                // Set cerebrolData like wp_localize_script does
+                window.cerebrolData = {
+                    apiUrl: window.siteUrl + '/wp-json/cerebroly/v1/chat',
+                    nonce: '', // Not needed for external
+                    placeholder: 'Type your question...',
+                    buttonText: 'Send',
+                    useRag: true, // Default to true for iframe
+                    welcomeMessages: [],
+                    customIcon: '',
+                    customIconUrl: '',
+                    selectedTheme: 'cerebroly-theme', // Default theme
+                    errorMessage: 'I\'m sorry, but I\'m having trouble processing your request right now. Please try again in a moment.'
+                };
+
+                // Update chat-input endpoint
+                const chatInput = document.getElementById('chat-input');
+                if (chatInput) {
+                    chatInput.setAttribute('endpoint', window.cerebrolData.apiUrl);
+                }
+
+                // Verify allowed domains
+                function verifyDomainAccess() {
+                    const parentOrigin = document.referrer ? new URL(document.referrer).origin : null;
+                    const currentOrigin = window.location.origin;
+
+                    
+
+                    // If loaded directly (no parent), allow for testing
+                    if (!parentOrigin || parentOrigin === currentOrigin) {
+                        return true;
+                    }
+
+                    // Check with backend if this domain is allowed
+                    fetch(window.siteUrl + '/wp-json/cerebroly/v1/verify-domain', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            origin: parentOrigin,
+                            referrer: document.referrer
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (!data.success || !data.allowed) {
+                                console.error('Domain not allowed:', parentOrigin);
+                                document.getElementById('cerebroly-chat').innerHTML =
+                                    '<div style="text-align: center; padding: 20px; color: #d63638; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">' +
+                                    '<h3 style="margin-bottom: 10px;">🚫 Access Denied</h3>' +
+                                    '<p style="margin-bottom: 15px;">Domain <strong>' + parentOrigin + '</strong> is not authorized to use this chat.</p>' +
+                                    '<p style="font-size: 14px; color: #666;">Please contact the site administrator to add your domain to the allowed list.</p>' +
+                                    '<p style="font-size: 14px; color: #666;">Create by <a style="color:#0066ff;" target="_blank" href="https://cerebroly.com/">cerebroly.chat</p>' +
+                                    '</div>';
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        })
+                        .catch(error => {
+                            console.warn('Could not verify domain access:', error);
+                            // Allow on error for fallback compatibility, but show warning
+                            console.warn('⚠️ Proceeding without domain verification due to API error');
+                            return true;
+                        });
+
+                    return true; // Allow initially, restrict after API check
+                }
+
+                // Verify domain before proceeding
+                verifyDomainAccess();
+
+                // Load theme dynamically based on WordPress settings
+                async function loadChatTheme() {
+                    try {
+                        const response = await fetch(window.siteUrl + '/wp-json/cerebroly/v1/appearance-config');
+                        const data = await response.json();
+
+                        if (data.success && data.theme) {
+                            // Update cerebrolData with selected theme
+                            window.cerebrolData.selectedTheme = data.theme;
+
+                            // Load theme CSS
+                            const themeLink = document.createElement('link');
+                            themeLink.rel = 'stylesheet';
+                            themeLink.href = window.siteUrl + '/wp-content/plugins/cerebroly/assets/css/themes/' + data.theme + '.css';
+                            document.head.appendChild(themeLink);
+
+                            // Apply theme to components and inject styles
+                            const applyThemeToComponents = () => {
+                                const chatContainer = document.querySelector('chat-container');
+                                const chatMessages = document.querySelector('chat-messages');
+                                const chatInput = document.querySelector('chat-input');
+                                
+                                if (data.theme === 'dark-theme') {
+                                    // Add theme classes to all components
+                                    if (chatContainer) chatContainer.classList.add('theme-dark-theme');
+                                    if (chatMessages) chatMessages.classList.add('theme-dark-theme');
+                                    if (chatInput) chatInput.classList.add('theme-dark-theme');
+                                    
+                                    // Inject styles into Shadow DOMs
+                                    const darkThemeStyles = `
+                                        /* Dark theme overrides for chat messages */
+                                        .chat-message.user-message .message-content {
+                                            background-color: hsl(251, 40%, 45.1%) !important;
+                                            color: #ffffff !important;
+                                            border: none !important;
+                                        }
+
+                                        .chat-message.bot-message .message-content {
+                                            background-color: rgba(89, 69, 161, 0.2) !important;
+                                            color: #ffffff !important;
+                                            border: none !important;
+                                        }
+
+                                        .chat-message .icon-user {
+                                            background-color: hsl(251, 40.2%, 54.1%) !important;
+                                            color: #ffffff !important;
+                                            border: none !important;
+                                        }
+
+                                        .chat-message .icon-bot {
+                                            background-color: hsl(60, 2.6%, 7.6%) !important;
+                                            color: #ffffff !important;
+                                            border: none !important;
+                                        }
+                                        
+                                        /* Dark theme button icons */
+                                        button svg.icon {
+                                            fill: white !important;
+                                        }
+                                        
+                                        button.btn-send svg.icon {
+                                            fill: white !important;
+                                        }
+                                        
+                                        button.btn-send:hover svg.icon {
+                                            fill: white !important;
+                                        }
+                                    `;
+                                    
+                                    // Inject into ChatMessages Shadow DOM
+                                    if (chatMessages && chatMessages.shadow) {
+                                        // Check if styles already exist
+                                        if (!chatMessages.shadow.querySelector('#iframe-dark-theme-messages')) {
+                                            const messagesStyleEl = document.createElement('style');
+                                            messagesStyleEl.id = 'iframe-dark-theme-messages';
+                                            messagesStyleEl.textContent = darkThemeStyles;
+                                            chatMessages.shadow.appendChild(messagesStyleEl);
+                                        }
+                                    }
+                                    
+                                    // Inject into ChatInput Shadow DOM
+                                    if (chatInput && chatInput.shadow) {
+                                        // Check if styles already exist
+                                        if (!chatInput.shadow.querySelector('#iframe-dark-theme-input')) {
+                                            const inputStyleEl = document.createElement('style');
+                                            inputStyleEl.id = 'iframe-dark-theme-input';
+                                            inputStyleEl.textContent = darkThemeStyles;
+                                            chatInput.shadow.appendChild(inputStyleEl);
+                                        }
+                                    }
+                                    
+                                    // Inject into ChatContainer Shadow DOM
+                                    if (chatContainer && chatContainer.shadow) {
+                                        // Check if styles already exist
+                                        if (!chatContainer.shadow.querySelector('#iframe-dark-theme-container')) {
+                                            const containerStyleEl = document.createElement('style');
+                                            containerStyleEl.id = 'iframe-dark-theme-container';
+                                            containerStyleEl.textContent = darkThemeStyles;
+                                            chatContainer.shadow.appendChild(containerStyleEl);
+                                        }
+                                    }
+                                    
+                                    console.log('Dark theme styles applied to iframe components');
+                                }
+                            };
+                            
+                            // Wait for all components to be available
+                            const waitForAllComponents = () => {
+                                const chatContainer = document.querySelector('chat-container');
+                                const chatMessages = document.querySelector('chat-messages');
+                                const chatInput = document.querySelector('chat-input');
+                                
+                                if (chatContainer && chatMessages && chatInput) {
+                                    applyThemeToComponents();
+                                } else {
+                                    setTimeout(waitForAllComponents, 100);
+                                }
+                            };
+                            
+                            waitForAllComponents();
+
+                            // Update welcome messages, error message and custom icons
+                            if (data.welcomeMessages) {
+                                window.cerebrolData.welcomeMessages = data.welcomeMessages;
+                            }
+                            if (data.errorMessage) {
+                                window.cerebrolData.errorMessage = data.errorMessage;
+                            }
+                            // Apply icon configuration
+                            if (data.customIcon) {
+                                window.cerebrolData.customIcon = data.customIcon;
+                            }
+
+                            // Apply icon styles based on configuration
+                            let iconCSS = '';
+
+                            // PRIORITY 1: Custom uploaded image (if URL exists, always use it)
+                            if (data.customIconUrl && data.customIconUrl.trim() !== '') {
+                                // Custom uploaded icon
+                                window.cerebrolData.customIconUrl = data.customIconUrl;
+                                iconCSS = `
+                            chat-container.closed::after {
+                                content: '' !important;
+                                background-image: url('${data.customIconUrl}') !important;
+                                background-size: cover !important;
+                                background-position: center !important;
+                                background-repeat: no-repeat !important;
+                                width: 40px !important;
+                                height: 40px !important;
+                                position: absolute !important;
+                                top: 50% !important;
+                                transform: translateY(-50%) !important;
+                                border-radius: 50% !important;
+                                z-index: 10 !important;
+                            }
+                            
+                            chat-container.medium::after,
+                            chat-container.fullscreen::after {
+                                display: none !important;
+                            }
+
+                            chat-container {
+                            visibility: visible !important;
+                            }
+
+                            .medium chat-messages {
+    top: 0 !important;
+    padding-top: 0;
+    margin-top: 15px;
+    height: 80%;
+}
+                        `;
+                            } 
+                            // PRIORITY 2: Emoji icons from backend (if no custom image)
+                            else if (data.customIcon && data.customIcon !== 'default') {
+                                // Emoji icon from admin selection
+                                const iconMap = {
+                                    'default': '💬',
+                                    'robot': '🤖',
+                                    'message': '💭',
+                                    'help': '❓',
+                                    'support': '🎧'
+                                };
+
+                                const selectedEmoji = iconMap[data.customIcon] || '💬';
+                                iconCSS = `
+                            chat-container.closed::after {
+                                content: "${selectedEmoji}" !important;
+                                font-size: 24px !important;
+                                color: white !important;
+                                position: absolute !important;
+                                right: 15px !important;
+                                top: 50% !important;
+                                transform: translateY(-50%) !important;
+                                z-index: 10 !important;
+                            }
+                            
+                            chat-container.medium::after,
+                            chat-container.fullscreen::after {
+                                display: none !important;
+                            }
+                        `;
+                            } 
+                            // PRIORITY 3: Default emoji (fallback)
+                            else {
+                                // Default emoji or when customIcon is 'default'
+                                iconCSS = `
+                            chat-container.closed::after {
+                                content: "💬" !important;
+                                font-size: 24px !important;
+                                color: white !important;
+                                position: absolute !important;
+                                right: 15px !important;
+                                top: 50% !important;
+                                transform: translateY(-50%) !important;
+                                z-index: 10 !important;
+                            }
+                            
+                            chat-container.medium::after,
+                            chat-container.fullscreen::after {
+                                display: none !important;
+                            }
+                        `;
+                            }
+
+                            // Always add visibility CSS
+                            iconCSS += `
+                            chat-container {
+                                visibility: visible !important;
+                            }
+
+                            .medium chat-messages {
+                                top: 0 !important;
+                                padding-top: 0;
+                                margin-top: 15px;
+                                height: 80%;
+                            }`;
+
+                            if (iconCSS) {
+                                const styleElement = document.createElement('style');
+                                styleElement.id = 'chat-icon-styles';
+                                styleElement.textContent = iconCSS;
+                                document.head.appendChild(styleElement);
+
+                                // Force update any existing chat containers
+                                setTimeout(() => {
+                                    const chatContainer = document.querySelector('chat-container');
+                                    if (chatContainer) {
+                                        // Force a style recalculation
+                                        chatContainer.style.display = 'none';
+                                        chatContainer.offsetHeight; // Trigger reflow
+                                        chatContainer.style.display = '';
+                                    }
+                                }, 100);
+                            }
+
+                        } else {
+                            console.warn('Could not load theme config, using default');
+                            // Load default theme as fallback
+                            const defaultThemeLink = document.createElement('link');
+                            defaultThemeLink.rel = 'stylesheet';
+                            defaultThemeLink.href = window.siteUrl + '/wp-content/plugins/cerebroly/assets/css/themes/cerebroly-theme.css';
+                            document.head.appendChild(defaultThemeLink);
+                        }
+                    } catch (error) {
+                        console.warn('Error loading theme config:', error);
+                        // Load default theme as fallback
+                        const defaultThemeLink = document.createElement('link');
+                        defaultThemeLink.rel = 'stylesheet';
+                        defaultThemeLink.href = window.siteUrl + '/wp-content/plugins/cerebroly/assets/css/themes/cerebroly-theme.css';
+                        document.head.appendChild(defaultThemeLink);
+                    }
+                }
+
+                // Load theme after site URL is confirmed and wait for it to complete
+                await loadChatTheme();
+
+                // Function to activate fullscreen using the natural chat flow
+                function activateFullscreenMode() {
+                    const chatContainer = document.querySelector('chat-container');
+                    if (!chatContainer) {
+                        return false;
+                    }
+
+
+                    // Step 1: If closed, click to open to medium
+                    if (chatContainer.state === 'closed') {
+                        chatContainer.click();
+
+                        // Step 2: After opening to medium, click fullscreen button
+                        setTimeout(() => {
+                            const fullscreenBtn = chatContainer.querySelector('#fullscreen');
+                            if (fullscreenBtn && fullscreenBtn.style.display !== 'none') {
+                                fullscreenBtn.click();
+                            } else {
+                            }
+                        }, 100);
+
+                        return true;
+                    }
+                    // If already in medium, just click fullscreen
+                    else if (chatContainer.state === 'medium') {
+                        const fullscreenBtn = chatContainer.querySelector('#fullscreen');
+                        if (fullscreenBtn && fullscreenBtn.style.display !== 'none') {
+                            fullscreenBtn.click();
+                            return true;
+                        }
+                    }
+                    // If already fullscreen, we're done
+                    else if (chatContainer.state === 'fullscreen') {
+                        return true;
+                    }
+
+                    return false;
+                }
+
+                
+
+            })(); // End of async initializeChat function
+        }
+    </script>
+
+    <!-- Load TypewriterManager if needed -->
+    <script>
+        // Load TypewriterManager with correct URL
+        const typewriterScript = document.createElement('script');
+        typewriterScript.type = 'module';
+        typewriterScript.src = `${window.siteUrl}/wp-content/plugins/cerebroly/assets/components/TypewriterManager.esm.min.js`;
+        document.head.appendChild(typewriterScript);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3027 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Cerebroly 1.5.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/Cerebroly\n"
+"Last-Translator: Eduardo Vega <info@eduardovega.net>\n"
+"Language-Team: Español\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-06-06T18:34:44+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: \n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: cerebroly\n"
+
+#. Plugin Name of the plugin
+#: intelli.php
+msgid "Cerebroly"
+msgstr "Cerebroly"
+
+#. Description of the plugin
+#: intelli.php
+msgid "Empower your WordPress site with a sophisticated AI agent. Cerebroly meticulously trains an AI with your unique WordPress content, enabling it to understand user queries, reason, and provide instant, accurate answers directly from your site's information using OpenAI. Go beyond basic chatbots with an intelligent assistant."
+msgstr "Donnez du pouvoir à votre site WordPress avec un agent d'IA sophistiqué. Cerebroly entraîne méticuleusement une IA avec votre contenu WordPress unique, lui permettant de comprendre les requêtes des utilisateurs, de raisonner et de fournir des réponses instantanées et précises directement à partir des informations de votre site en utilisant OpenAI. Allez au-delà des chatbots basiques avec un assistant intelligent."
+
+#. Author of the plugin
+#: intelli.php
+msgid "Devscope LLc (Eduardo Vega)"
+msgstr "Devscope LLc (Eduardo Vega)"
+
+#. Author URI of the plugin
+#: intelli.php
+msgid "https://eduardovega.net/"
+msgstr "https://eduardovega.net/"
+
+#: admin/Admin.php:89
+#: admin/Admin.php:466
+msgid "Preview successfully regenerated."
+msgstr "Prévisualisation régénérée avec succès."
+
+#: admin/Admin.php:126
+#: admin/Admin.php:259
+#: admin/Admin.php:1260
+#: admin/Admin.php:1375
+#: admin/Admin.php:1453
+#: admin/Admin.php:1511
+msgid "You don't have permission to perform this action."
+msgstr "Vous n'avez pas la permission d'effectuer cette action."
+
+#: admin/Admin.php:126
+#: admin/Admin.php:259
+#: admin/Admin.php:1260
+#: admin/Admin.php:1375
+#: admin/Admin.php:1453
+#: admin/Admin.php:1511
+#: admin/views/dashboard.php:120
+msgid "Error"
+msgstr "Erreur"
+
+#: admin/Admin.php:161
+msgid "No content found for training. Check your extraction settings."
+msgstr "Aucun contenu trouvé pour l'entraînement. Vérifiez vos paramètres d'extraction."
+
+#: admin/Admin.php:187
+#: admin/Admin.php:286
+msgid "Not available"
+msgstr "Non disponible"
+
+#: admin/Admin.php:215
+msgid "Model ID not provided"
+msgstr "ID de modèle non fourni"
+
+#: admin/Admin.php:308
+#: admin/Admin.php:309
+msgid "Cerebroly"
+msgstr "Cerebroly"
+
+#: admin/Admin.php:319
+msgid "Cerebroly - Dashboard"
+msgstr "Cerebroly - Tableau de bord"
+
+#: admin/Admin.php:320
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: admin/Admin.php:328
+#: admin/views/files.php:2
+msgid "Cerebroly - Files"
+msgstr "Cerebroly - Fichiers"
+
+#: admin/Admin.php:329
+#: admin/views/rag-config.php:424
+msgid "Files"
+msgstr "Fichiers"
+
+#: admin/Admin.php:338
+msgid "Cerebroly - Fine-Tuning"
+msgstr "Cerebroly - Affinage"
+
+#: admin/Admin.php:339
+msgid "Fine-Tuning"
+msgstr "Affinage"
+
+#: admin/Admin.php:348
+msgid "Cerebroly - RAG System"
+msgstr "Cerebroly - Système RAG"
+
+#: admin/Admin.php:349
+msgid "RAG System"
+msgstr "Système RAG"
+
+#: admin/Admin.php:410
+#: admin/Admin.php:578
+msgid "Training data has been updated successfully."
+msgstr "Les données d'entraînement ont été mises à jour avec succès."
+
+#. translators: %s: Error: The provided JSON is not valid. Error: %s'
+#: admin/Admin.php:418
+#: admin/Admin.php:586
+#, php-format
+msgid "Error: The provided JSON is not valid. Error: %s"
+msgstr "Erreur : Le JSON fourni n'est pas valide. Erreur : %s"
+
+#: admin/Admin.php:638
+#: admin/Admin.php:774
+#: admin/Admin.php:899
+#: admin/Admin.php:962
+#: admin/Admin.php:1577
+#: includes/RagManager.php:259
+#: includes/RagManager.php:295
+#: includes/RagManager.php:407
+#: includes/RagManager.php:1064
+#: includes/RagManager.php:1191
+#: includes/RagManager.php:1668
+#: includes/RagManager.php:1701
+#: includes/RagManager.php:1731
+#: includes/RagManager.php:1761
+#: includes/RagManager.php:1819
+#: includes/RagManager.php:1874
+msgid "Insufficient permissions"
+msgstr "Permissions insuffisantes"
+
+#. translators: %s: Error parsing OpenAI response: %s
+#: admin/Admin.php:748
+#, php-format
+msgid "Error parsing OpenAI response: %s"
+msgstr "Erreur lors de l'analyse de la réponse OpenAI : %s"
+
+#: admin/Admin.php:785
+msgid "No dataset to save"
+msgstr "Aucun ensemble de données à enregistrer"
+
+#: admin/Admin.php:802
+msgid "Error saving enhanced dataset"
+msgstr "Erreur lors de l'enregistrement de l'ensemble de données amélioré"
+
+#: admin/Admin.php:807
+msgid "Enhanced dataset saved successfully"
+msgstr "Ensemble de données amélioré enregistré avec succès"
+
+#: admin/Admin.php:909
+msgid "OpenAI API key has not been configured"
+msgstr "La clé API OpenAI n'a pas été configurée"
+
+#: admin/Admin.php:910
+msgid "Please configure an API key in the settings page"
+msgstr "Veuillez configurer une clé API dans la page des réglages"
+
+#: admin/Admin.php:928
+msgid "Connection error"
+msgstr "Erreur de connexion"
+
+#: admin/Admin.php:939
+msgid "API response error"
+msgstr "Erreur de réponse de l'API"
+
+#: admin/Admin.php:941
+msgid "No additional details"
+msgstr "Aucun détail supplémentaire"
+
+#: admin/Admin.php:949
+msgid "OpenAI API working correctly"
+msgstr "API OpenAI fonctionne correctement"
+
+#. translators: %d: Found %d models
+#: admin/Admin.php:951
+#, php-format
+msgid "Found %d models"
+msgstr "%d modèles trouvés"
+
+#. translators: %d: Found %d models
+#: admin/Admin.php:951
+msgid "No models found"
+msgstr "Aucun modèle trouvé"
+
+#: admin/Admin.php:967
+#: includes/RagManager.php:413
+#: includes/RagManager.php:1070
+#: includes/RagManager.php:1674
+#: includes/RagManager.php:1737
+#: includes/RagManager.php:1767
+msgid "Security verification failed"
+msgstr "La vérification de sécurité a échoué"
+
+#: admin/Admin.php:974
+msgid "No training in progress"
+msgstr "Aucun entraînement en cours"
+
+#. translators: %s:Error checking status: %s
+#: admin/Admin.php:983
+#, php-format
+msgid "Error checking status: %s"
+msgstr "Erreur lors de la vérification du statut : %s"
+
+#: admin/Admin.php:1144
+msgid "Test Model"
+msgstr "Modèle de test"
+
+#: admin/Admin.php:1146
+msgid "Temporary model for testing"
+msgstr "Modèle temporaire pour les tests"
+
+#: admin/Admin.php:1273
+#: admin/Admin.php:1389
+msgid "Invalid model ID."
+msgstr "ID de modèle invalide."
+
+#. translators: %s:Error checking model: %s
+#: admin/Admin.php:1291
+#, php-format
+msgid "Error checking model: %s"
+msgstr "Erreur lors de la vérification du modèle : %s"
+
+#: admin/Admin.php:1359
+msgid "Model selected successfully."
+msgstr "Modèle sélectionné avec succès."
+
+#: admin/Admin.php:1420
+msgid "Model deleted successfully."
+msgstr "Modèle supprimé avec succès."
+
+#. translators: %s: Error deleting model: %s
+#: admin/Admin.php:1428
+#, php-format
+msgid "Error deleting model: %s"
+msgstr "Erreur lors de la suppression du modèle : %s"
+
+#: admin/Admin.php:1436
+msgid "The model does not exist in the database."
+msgstr "Le modèle n'existe pas dans la base de données."
+
+#: admin/Admin.php:1464
+msgid "No file provided."
+msgstr "Aucun fichier fourni."
+
+#. translators: %s: Error uploading file: %s
+#: admin/Admin.php:1481
+#, php-format
+msgid "Error uploading file: %s"
+msgstr "Erreur lors du téléchargement du fichier : %s"
+
+#. translators: %s: File uploaded successfully: %s
+#: admin/Admin.php:1489
+#, php-format
+msgid "File uploaded successfully: %s"
+msgstr "Fichier téléchargé avec succès : %s"
+
+#: admin/Admin.php:1524
+msgid "Invalid file ID."
+msgstr "ID de fichier invalide."
+
+#. translators: %s: Error deleting file: %s
+#: admin/Admin.php:1542
+#, php-format
+msgid "Error deleting file: %s"
+msgstr "Erreur lors de la suppression du fichier : %s"
+
+#: admin/Admin.php:1549
+msgid "File deleted successfully."
+msgstr "Fichier supprimé avec succès."
+
+#: admin/Admin.php:1586
+msgid "Test cron event scheduled! Check back in 5-10 seconds."
+msgstr "Événement cron de test programmé ! Vérifiez à nouveau dans 5-10 secondes."
+
+#: admin/views/chat-appearance.php:488
+msgid "Visual Theme"
+msgstr "Thème visuel"
+
+#: admin/views/chat-appearance.php:493
+msgid "Select the visual theme that best fits your website."
+msgstr "Sélectionnez le thème visuel qui correspond le mieux à votre site web."
+
+#: admin/views/chat-appearance.php:503
+msgid "Chat Icon"
+msgstr "Icône de chat"
+
+#: admin/views/chat-appearance.php:508
+msgid "Customize the icon shown when the chat is closed."
+msgstr "Personnalisez l'icône affichée lorsque le chat est fermé."
+
+#: admin/views/chat-appearance.php:518
+msgid "Welcome Messages"
+msgstr "Messages de bienvenue"
+
+#: admin/views/chat-appearance.php:523
+msgid "Configure the initial messages displayed when the chat loads. These messages will appear with a typing effect."
+msgstr "Configurez les messages initiaux affichés lors du chargement du chat. Ces messages apparaîtront avec un effet de frappe."
+
+#: admin/views/chat-appearance.php:533
+msgid "Error Message"
+msgstr "Message d'erreur"
+
+#: admin/views/chat-appearance.php:538
+msgid "This message will be displayed when the chat encounters an error or fails to respond."
+msgstr "Ce message sera affiché lorsque le chat rencontrera une erreur ou ne parviendra pas à répondre."
+
+#: admin/views/dashboard.php:15
+msgid "Training successfully initiated"
+msgstr "Entraînement initié avec succès"
+
+#: admin/views/dashboard.php:16
+msgid "Model ID:"
+msgstr "ID du modèle :"
+
+#: admin/views/dashboard.php:18
+#: admin/views/fine-tuning-config.php:76
+msgid "Status:"
+msgstr "Statut :"
+
+#: admin/views/dashboard.php:22
+msgid "Details of submitted content:"
+msgstr "Détails du contenu soumis :"
+
+#: admin/views/dashboard.php:24
+#: admin/views/dashboard.php:51
+msgid "Processed documents:"
+msgstr "Documents traités :"
+
+#: admin/views/dashboard.php:26
+#: admin/views/dashboard.php:53
+msgid "Total words:"
+msgstr "Nombre total de mots :"
+
+#: admin/views/dashboard.php:28
+#: admin/views/dashboard.php:55
+msgid "Content size:"
+msgstr "Taille du contenu :"
+
+#: admin/views/dashboard.php:32
+msgid "OpenAI is processing your content. Training can take anywhere from 30 minutes to several hours depending on the amount of data and system load."
+msgstr "OpenAI traite votre contenu. L'entraînement peut prendre de 30 minutes à plusieurs heures selon la quantité de données et la charge du système."
+
+#: admin/views/dashboard.php:40
+msgid "Error starting training"
+msgstr "Erreur lors du démarrage de l'entraînement"
+
+#: admin/views/dashboard.php:41
+msgid "Error:"
+msgstr "Erreur :"
+
+#: admin/views/dashboard.php:44
+msgid "Details:"
+msgstr "Détails :"
+
+#: admin/views/dashboard.php:49
+msgid "Information about the content we attempted to submit:"
+msgstr "Informations sur le contenu que nous avons tenté de soumettre :"
+
+#: admin/views/dashboard.php:77
+msgid "System Status"
+msgstr "Statut du système"
+
+#: admin/views/dashboard.php:84
+msgid "Component"
+msgstr "Composant"
+
+#: admin/views/dashboard.php:85
+#: admin/views/dashboard.php:457
+#: admin/views/dashboard.php:691
+#: admin/views/rag-config.php:71
+msgid "Status"
+msgstr "Statut"
+
+#: admin/views/dashboard.php:86
+#: admin/views/dashboard.php:294
+msgid "Details"
+msgstr "Détails"
+
+#: admin/views/dashboard.php:91
+#: admin/views/settings.php:92
+msgid "Operation Mode"
+msgstr "Mode de fonctionnement"
+
+#: admin/views/dashboard.php:97
+msgid "RAG"
+msgstr "RAG"
+
+#: admin/views/dashboard.php:100
+msgid "Fine-tuning"
+msgstr "Affinage"
+
+#: admin/views/dashboard.php:105
+msgid "Using Retrieval-Augmented Generation for dynamic content retrieval"
+msgstr "Utilisation de la génération augmentée par récupération pour la récupération dynamique de contenu"
+
+#: admin/views/dashboard.php:107
+#: intelli.php:610
+msgid "Configure RAG"
+msgstr "Configurer RAG"
+
+#: admin/views/dashboard.php:109
+msgid "Using Fine-tuning to create a custom model based on your content"
+msgstr "Utilisation de l'affinage pour créer un modèle personnalisé basé sur votre contenu"
+
+#: admin/views/dashboard.php:111
+msgid "Manage Fine-tuning"
+msgstr "Gérer l'affinage"
+
+#: admin/views/dashboard.php:116
+msgid "OpenAI API"
+msgstr "API OpenAI"
+
+#: admin/views/dashboard.php:123
+msgid "Connected"
+msgstr "Connecté"
+
+#: admin/views/dashboard.php:130
+msgid "API key is valid and working properly"
+msgstr "La clé API est valide et fonctionne correctement"
+
+#: admin/views/dashboard.php:135
+msgid "Post/Page Extraction"
+msgstr "Extraction d'articles/pages"
+
+#: admin/views/dashboard.php:137
+#: admin/views/dashboard.php:150
+msgid "Enabled"
+msgstr "Activé"
+
+#: admin/views/dashboard.php:137
+#: admin/views/dashboard.php:150
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: admin/views/dashboard.php:141
+msgid "WordPress posts and pages will be included in training"
+msgstr "Les articles et pages WordPress seront inclus dans l'entraînement"
+
+#: admin/views/dashboard.php:143
+msgid "WordPress posts and pages will NOT be included in training"
+msgstr "Les articles et pages WordPress ne seront PAS inclus dans l'entraînement"
+
+#: admin/views/dashboard.php:148
+msgid "Media Library Extraction"
+msgstr "Extraction de la bibliothèque de médias"
+
+#: admin/views/dashboard.php:154
+msgid "PDFs and text files from Media Library will be included in training"
+msgstr "Les fichiers PDF et texte de la bibliothèque de médias seront inclus dans l'entraînement"
+
+#: admin/views/dashboard.php:156
+msgid "Media Library files will NOT be included in training"
+msgstr "Les fichiers de la bibliothèque de médias ne seront PAS inclus dans l'entraînement"
+
+#: admin/views/dashboard.php:161
+#: admin/views/files.php:56
+msgid "Uploaded Files"
+msgstr "Fichiers téléchargés"
+
+#. translators: %s: %d files
+#: admin/views/dashboard.php:166
+#, php-format
+msgid "%d files"
+msgstr "%d fichiers"
+
+#: admin/views/dashboard.php:170
+msgid "Manage Files"
+msgstr "Gérer les fichiers"
+
+#: admin/views/dashboard.php:201
+msgid "System Fine-tuned"
+msgstr "Système affiné"
+
+#: admin/views/dashboard.php:208
+#: admin/views/dashboard.php:365
+msgid "Property"
+msgstr "Propriété"
+
+#: admin/views/dashboard.php:209
+#: admin/views/dashboard.php:293
+#: admin/views/dashboard.php:366
+msgid "Value"
+msgstr "Valeur"
+
+#: admin/views/dashboard.php:214
+msgid "Model ID"
+msgstr "ID du modèle"
+
+#: admin/views/dashboard.php:218
+msgid "Created"
+msgstr "Créé"
+
+#: admin/views/dashboard.php:222
+msgid "Updated"
+msgstr "Mis à jour"
+
+#: admin/views/dashboard.php:230
+msgid "Fine-tuned Model"
+msgstr "Modèle affiné"
+
+#: admin/views/dashboard.php:285
+#: admin/views/dashboard.php:415
+msgid "Content Statistics"
+msgstr "Statistiques de contenu"
+
+#: admin/views/dashboard.php:292
+msgid "Metric"
+msgstr "Métrique"
+
+#: admin/views/dashboard.php:299
+#: admin/views/fine-tuning-config.php:38
+msgid "Training Examples"
+msgstr "Exemples d'entraînement"
+
+#: admin/views/dashboard.php:301
+msgid "Total question-answer pairs for training"
+msgstr "Nombre total de paires question-réponse pour l'entraînement"
+
+#: admin/views/dashboard.php:305
+msgid "Content Size"
+msgstr "Taille du contenu"
+
+#: admin/views/dashboard.php:307
+msgid "Size of training data in kilobytes"
+msgstr "Taille des données d'entraînement en kilo-octets"
+
+#: admin/views/dashboard.php:310
+#: admin/views/fine-tuning-config.php:46
+msgid "Total Words"
+msgstr "Nombre total de mots"
+
+#: admin/views/dashboard.php:312
+msgid "Word count in all training examples"
+msgstr "Nombre de mots dans tous les exemples d'entraînement"
+
+#. translators: %s: 'Last Updated
+#: admin/views/dashboard.php:316
+#: admin/views/dashboard.php:396
+#: admin/views/dashboard.php:445
+#: admin/views/fine-tuning-config.php:50
+#: admin/views/rag-config.php:63
+msgid "Last Updated"
+msgstr "Dernière mise à jour"
+
+#: admin/views/dashboard.php:322
+#: admin/views/dashboard.php:397
+#: admin/views/dashboard.php:451
+#: admin/views/rag-config.php:66
+msgid "Never"
+msgstr "Jamais"
+
+#: admin/views/dashboard.php:328
+#: admin/views/fine-tuning-config.php:195
+msgid "Regenerate Preview"
+msgstr "Régénérer l'aperçu"
+
+#: admin/views/dashboard.php:358
+msgid "System RAG"
+msgstr "Système RAG"
+
+#: admin/views/dashboard.php:371
+msgid "System Type"
+msgstr "Type de système"
+
+#: admin/views/dashboard.php:372
+msgid "Retrieval-Augmented Generation (RAG)"
+msgstr "Génération Augmentée par Récupération (RAG)"
+
+#: admin/views/dashboard.php:376
+#: admin/views/rag-config.php:141
+msgid "Embedding Model"
+msgstr "Modèle d'intégration"
+
+#: admin/views/dashboard.php:381
+#: admin/views/rag-config.php:329
+msgid "LLM Model"
+msgstr "Modèle LLM"
+
+#: admin/views/dashboard.php:387
+msgid "Indexed Content"
+msgstr "Contenu indexé"
+
+#. translators: %s: Number of content chunks
+#: admin/views/dashboard.php:391
+#, php-format
+msgid "%s chunks"
+msgstr "%s morceaux"
+
+#: admin/views/dashboard.php:428
+#: admin/views/rag-config.php:48
+msgid "RAG System not installed. Click \"Initialize RAG System\" to begin."
+msgstr "Le système RAG n'est pas installé. Cliquez sur \"Initialiser le système RAG\" pour commencer."
+
+#: admin/views/dashboard.php:429
+#: admin/views/rag-config.php:49
+msgid "Initialize RAG System"
+msgstr "Initialiser le système RAG"
+
+#: admin/views/dashboard.php:439
+#: admin/views/rag-config.php:59
+msgid "Indexed Documents"
+msgstr "Documents indexés"
+
+#: admin/views/dashboard.php:458
+#: admin/views/rag-config.php:72
+msgid "Active"
+msgstr "Actif"
+
+#: admin/views/dashboard.php:478
+msgid "No active model or RAG system configured. Please train a model or enable the RAG system."
+msgstr "Aucun modèle actif ou système RAG configuré. Veuillez entraîner un modèle ou activer le système RAG."
+
+#: admin/views/dashboard.php:489
+msgid "Chat Shortcode"
+msgstr "Code court du chat"
+
+#: admin/views/dashboard.php:494
+msgid "Use this shortcode to insert the chat in any page or post."
+msgstr "Utilisez ce code court pour insérer le chat dans n'importe quelle page ou article."
+
+#: admin/views/dashboard.php:509
+msgid "API Diagnostics"
+msgstr "Diagnostics API"
+
+#: admin/views/dashboard.php:514
+msgid "Run communication tests with OpenAI."
+msgstr "Exécutez des tests de communication avec OpenAI."
+
+#: admin/views/dashboard.php:517
+msgid "Test API Connection"
+msgstr "Tester la connexion API"
+
+#: admin/views/dashboard.php:591
+msgid "Cron Diagnostics"
+msgstr "Diagnostics Cron"
+
+#: admin/views/dashboard.php:595
+msgid "Check if WP-Cron is working. Click the button to trigger a test event."
+msgstr "Vérifiez si WP-Cron fonctionne. Cliquez sur le bouton pour déclencher un événement de test."
+
+#: admin/views/dashboard.php:598
+msgid "Run Cron Test"
+msgstr "Exécuter le test Cron"
+
+#: admin/views/dashboard.php:603
+msgid "Last Cron Run:"
+msgstr "Dernière exécution de Cron :"
+
+#: admin/views/dashboard.php:669
+#: admin/views/dashboard.php:755
+msgid "Configure API Key"
+msgstr "Configurer la clé API"
+
+#: admin/views/dashboard.php:682
+msgid "Available Fine-tuned Models"
+msgstr "Modèles affinés disponibles"
+
+#: admin/views/dashboard.php:689
+msgid "Name/ID"
+msgstr "Nom/ID"
+
+#: admin/views/dashboard.php:690
+msgid "Base Model"
+msgstr "Modèle de base"
+
+#: admin/views/dashboard.php:692
+#: admin/views/dashboard.php:737
+#: admin/views/files.php:70
+msgid "Actions"
+msgstr "Actions"
+
+#: admin/views/dashboard.php:712
+msgid "Select"
+msgstr "Sélectionner"
+
+#: admin/views/dashboard.php:716
+msgid "In progress"
+msgstr "En cours"
+
+#: admin/views/dashboard.php:745
+msgid "Start a new training with current WordPress content and uploaded files."
+msgstr "Commencez un nouvel entraînement avec le contenu WordPress actuel et les fichiers téléchargés."
+
+#: admin/views/dashboard.php:750
+msgid "You must first configure the OpenAI API key."
+msgstr "Vous devez d'abord configurer la clé API OpenAI."
+
+#: admin/views/dashboard.php:753
+#: admin/views/dashboard.php:758
+#: admin/views/fine-tuning-config.php:123
+#: admin/views/fine-tuning-config.php:283
+msgid "Start Training"
+msgstr "Commencer l'entraînement"
+
+#: admin/views/files.php:6
+msgid "File uploaded and saved successfully!"
+msgstr "Fichier téléchargé et enregistré avec succès !"
+
+#: admin/views/files.php:8
+msgid "File deleted successfully!"
+msgstr "Fichier supprimé avec succès !"
+
+#: admin/views/files.php:26
+#: admin/views/files.php:47
+msgid "Upload File"
+msgstr "Télécharger un fichier"
+
+#: admin/views/files.php:30
+msgid "Text files to include in your knowledge base."
+msgstr "Fichiers texte à inclure dans votre base de connaissances."
+
+#: admin/views/files.php:38
+#: includes/RagManager.php:1933
+msgid "File"
+msgstr "Fichier"
+
+#: admin/views/files.php:41
+msgid "Allowed formats: TXT"
+msgstr "Formats autorisés : TXT"
+
+#: admin/views/files.php:61
+msgid "No files have been uploaded yet."
+msgstr "Aucun fichier n'a encore été téléchargé."
+
+#: admin/views/files.php:66
+msgid "Name"
+msgstr "Nom"
+
+#: admin/views/files.php:67
+#: includes/ContentExtractor.php:598
+msgid "Type"
+msgstr "Type"
+
+#: admin/views/files.php:68
+msgid "Size"
+msgstr "Taille"
+
+#: admin/views/files.php:69
+msgid "Upload Date"
+msgstr "Date de téléchargement"
+
+#: admin/views/files.php:85
+msgid "Are you sure you want to delete this file?"
+msgstr "Êtes-vous sûr de vouloir supprimer ce fichier ?"
+
+#: admin/views/files.php:85
+msgid "Delete"
+msgstr "Supprimer"
+
+#: admin/views/files.php:99
+msgid "What files should I upload?"
+msgstr "Quels fichiers dois-je télécharger ?"
+
+#: admin/views/files.php:103
+msgid "Upload files containing relevant information that you want the chatbot to use when answering questions, such as:"
+msgstr "Téléchargez des fichiers contenant des informations pertinentes que vous souhaitez que le chatbot utilise pour répondre aux questions, telles que :"
+
+#: admin/views/files.php:105
+msgid "Policy documents"
+msgstr "Documents de politique"
+
+#: admin/views/files.php:106
+msgid "User manuals"
+msgstr "Manuels d'utilisation"
+
+#: admin/views/files.php:107
+msgid "Frequently asked questions"
+msgstr "Questions fréquemment posées"
+
+#: admin/views/files.php:108
+msgid "Technical documentation"
+msgstr "Documentation technique"
+
+#: admin/views/files.php:109
+msgid "Any information not already included in your posts and pages"
+msgstr "Toute information non déjà incluse dans vos articles et pages"
+
+#: admin/views/files.php:113
+#: admin/views/fine-tuning-config.php:140
+#: admin/views/fine-tuning-config.php:294
+#: admin/views/settings.php:167
+#: admin/views/settings.php:182
+msgid "Note:"
+msgstr "Note :"
+
+#: admin/views/files.php:113
+msgid "After uploading or deleting files, you'll need to either:"
+msgstr "Après avoir téléchargé ou supprimé des fichiers, vous devrez soit :"
+
+#: admin/views/files.php:115
+msgid "Fine-tuning mode:"
+msgstr "Mode d'affinage :"
+
+#: admin/views/files.php:115
+msgid "Train a new model for changes to be reflected in the chat"
+msgstr "Entraîner un nouveau modèle pour que les modifications soient reflétées dans le chat"
+
+#: admin/views/files.php:116
+msgid "RAG mode:"
+msgstr "Mode RAG :"
+
+#: admin/views/files.php:116
+msgid "Reindex your content through the RAG configuration page"
+msgstr "Réindexer votre contenu via la page de configuration RAG"
+
+#: admin/views/fine-tuning-config.php:7
+msgid "Enhance Dataset with AI"
+msgstr "Améliorer l'ensemble de données avec l'IA"
+
+#: admin/views/fine-tuning-config.php:8
+msgid "This process will send your website content to OpenAI to generate variations."
+msgstr "Ce processus enverra le contenu de votre site web à OpenAI pour générer des variations."
+
+#: admin/views/fine-tuning-config.php:9
+msgid "Warning:"
+msgstr "Avertissement :"
+
+#: admin/views/fine-tuning-config.php:10
+msgid "This will not use the current JSON, but the original WordPress content."
+msgstr "Ceci n'utilisera pas le JSON actuel, mais le contenu WordPress original."
+
+#: admin/views/fine-tuning-config.php:11
+msgid "Do you want to continue?"
+msgstr "Voulez-vous continuer ?"
+
+#: admin/views/fine-tuning-config.php:12
+msgid "Start Enhancement"
+msgstr "Démarrer l'amélioration"
+
+#: admin/views/fine-tuning-config.php:13
+msgid "Cancel"
+msgstr "Annuler"
+
+#: admin/views/fine-tuning-config.php:19
+msgid "Cerebroly - Fine-Tuning configuration"
+msgstr "Cerebroly - Configuration de l'affinage"
+
+#: admin/views/fine-tuning-config.php:24
+#: admin/views/rag-config.php:26
+msgid "Overview"
+msgstr "Aperçu"
+
+#: admin/views/fine-tuning-config.php:25
+msgid "Data Editor"
+msgstr "Éditeur de données"
+
+#: admin/views/fine-tuning-config.php:26
+msgid "Preview"
+msgstr "Prévisualisation"
+
+#: admin/views/fine-tuning-config.php:27
+#: admin/views/fine-tuning-config.php:109
+#: admin/views/rag-config.php:428
+#: includes/RagManager.php:1936
+msgid "Training"
+msgstr "Entraînement"
+
+#: admin/views/fine-tuning-config.php:35
+msgid "Dataset Statistics"
+msgstr "Statistiques de l'ensemble de données"
+
+#: admin/views/fine-tuning-config.php:42
+msgid "Total Size"
+msgstr "Taille totale"
+
+#: admin/views/fine-tuning-config.php:65
+msgid "Active Model"
+msgstr "Modèle actif"
+
+#: admin/views/fine-tuning-config.php:72
+msgid "Fine-Tuned Model"
+msgstr "Modèle affiné"
+
+#: admin/views/fine-tuning-config.php:75
+msgid "ID:"
+msgstr "ID :"
+
+#: admin/views/fine-tuning-config.php:81
+msgid "Created:"
+msgstr "Créé :"
+
+#: admin/views/fine-tuning-config.php:82
+msgid "Updated:"
+msgstr "Mis à jour :"
+
+#: admin/views/fine-tuning-config.php:89
+msgid "About Fine-Tuning"
+msgstr "À propos de l'affinage"
+
+#: admin/views/fine-tuning-config.php:90
+msgid "Fine-Tuning is the process of adapting a pre-trained AI model for a specific task, in this case, answering questions about your website's content."
+msgstr "L'affinage est le processus d'adaptation d'un modèle d'IA pré-entraîné pour une tâche spécifique, dans ce cas, répondre aux questions sur le contenu de votre site web."
+
+#: admin/views/fine-tuning-config.php:92
+msgid "How It Works"
+msgstr "Comment ça marche"
+
+#: admin/views/fine-tuning-config.php:97
+msgid "Data Preparation"
+msgstr "Préparation des données"
+
+#: admin/views/fine-tuning-config.php:98
+msgid "The system extracts content from your site and formats it into question-answer pairs."
+msgstr "Le système extrait le contenu de votre site et le formate en paires question-réponse."
+
+#: admin/views/fine-tuning-config.php:103
+msgid "Optional Editing"
+msgstr "Édition optionnelle"
+
+#: admin/views/fine-tuning-config.php:104
+msgid "You can manually edit the training data in the Editor to customize questions and answers."
+msgstr "Vous pouvez éditer manuellement les données d'entraînement dans l'éditeur pour personnaliser les questions et les réponses."
+
+#: admin/views/fine-tuning-config.php:110
+msgid "OpenAI adapts a base model with your data to create a model specialized in your content."
+msgstr "OpenAI adapte un modèle de base avec vos données pour créer un modèle spécialisé dans votre contenu."
+
+#: admin/views/fine-tuning-config.php:115
+msgid "Implementation"
+msgstr "Implémentation"
+
+#: admin/views/fine-tuning-config.php:116
+msgid "Once training is complete, your model will be ready to answer queries through the chat."
+msgstr "Une fois l'entraînement terminé, votre modèle sera prêt à répondre aux requêtes via le chat."
+
+#: admin/views/fine-tuning-config.php:121
+msgid "Edit Training Data"
+msgstr "Modifier les données d'entraînement"
+
+#: admin/views/fine-tuning-config.php:122
+msgid "Data Preview"
+msgstr "Aperçu des données"
+
+#: admin/views/fine-tuning-config.php:127
+#: admin/views/rag-config.php:120
+msgid "⚠️ Important Privacy & Security Alert: Do Not Share Confidential Information!"
+msgstr "⚠️ Alerte importante de confidentialité et de sécurité : Ne partagez pas d'informations confidentielles !"
+
+#: admin/views/fine-tuning-config.php:128
+#: admin/views/rag-config.php:121
+msgid "This plugin sends your content to OpenAI's servers for processing to create informational agents. This means that any information you include in your WordPress posts, pages, or custom post types that this plugin processes will be transmitted to OpenAI."
+msgstr "Ce plugin envoie votre contenu aux serveurs d'OpenAI pour traitement afin de créer des agents d'information. Cela signifie que toute information que vous incluez dans vos articles, pages ou types de publications personnalisées WordPress traités par ce plugin sera transmise à OpenAI."
+
+#: admin/views/fine-tuning-config.php:129
+#: admin/views/rag-config.php:122
+msgid "For your security and privacy, we strongly advise against including any confidential, sensitive, or personal data (e.g., passwords, private keys, credit card numbers, confidential documents, personal identifiable information of yourself or others) in the content that this plugin is configured to use."
+msgstr "Pour votre sécurité et votre confidentialité, nous vous déconseillons fortement d'inclure des données confidentielles, sensibles ou personnelles (par exemple, mots de passe, clés privées, numéros de carte de crédit, documents confidentiels, informations d'identification personnelle de vous-même ou d'autres) dans le contenu que ce plugin est configuré pour utiliser."
+
+#: admin/views/fine-tuning-config.php:130
+#: admin/views/rag-config.php:123
+msgid "Once processed by OpenAI, this data is subject to their policies. Always review OpenAI's Terms of Service and Usage Policies to understand how they handle data. Your content used by this plugin is intended for informational purposes and may be publicly exposed through the agents created."
+msgstr "Une fois traitées par OpenAI, ces données sont soumises à leurs politiques. Passez toujours en revue les Conditions Générales d'Utilisation et les Politiques d'Utilisation d'OpenAI pour comprendre comment ils traitent les données. Votre contenu utilisé par ce plugin est destiné à des fins d'information et peut être exposé publiquement via les agents créés."
+
+#: admin/views/fine-tuning-config.php:139
+msgid "Edit the training JSON directly. Each element represents a question-answer pair for training."
+msgstr "Modifiez le JSON d'entraînement directement. Chaque élément représente une paire question-réponse pour l'entraînement."
+
+#: admin/views/fine-tuning-config.php:140
+msgid "Changes made here will affect model training. Ensure the format is correct."
+msgstr "Les modifications apportées ici affecteront l'entraînement du modèle. Assurez-vous que le format est correct."
+
+#: admin/views/fine-tuning-config.php:147
+msgid "Add New Pair"
+msgstr "Ajouter une nouvelle paire"
+
+#: admin/views/fine-tuning-config.php:148
+msgid "Format JSON"
+msgstr "Formater le JSON"
+
+#: admin/views/fine-tuning-config.php:149
+msgid "Improve with AI"
+msgstr "Améliorer avec l'IA"
+
+#: admin/views/fine-tuning-config.php:150
+msgid "Editor:"
+msgstr "Éditeur :"
+
+#: admin/views/fine-tuning-config.php:150
+msgid "Ready"
+msgstr "Prêt"
+
+#: admin/views/fine-tuning-config.php:160
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: admin/views/fine-tuning-config.php:161
+msgid "Regenerate Original Data"
+msgstr "Régénérer les données originales"
+
+#: admin/views/fine-tuning-config.php:166
+msgid "JSON Format"
+msgstr "Format JSON"
+
+#: admin/views/fine-tuning-config.php:167
+msgid "Each entry must follow this format:"
+msgstr "Chaque entrée doit suivre ce format :"
+
+#: admin/views/fine-tuning-config.php:180
+msgid "Tips for Better Training Data"
+msgstr "Conseils pour de meilleures données d'entraînement"
+
+#: admin/views/fine-tuning-config.php:182
+msgid "Ensure each question is specific and relevant to your content."
+msgstr "Assurez-vous que chaque question est spécifique et pertinente par rapport à votre contenu."
+
+#: admin/views/fine-tuning-config.php:183
+msgid "Responses should be useful and precise, based on the actual information from your site."
+msgstr "Les réponses doivent être utiles et précises, basées sur les informations réelles de votre site."
+
+#: admin/views/fine-tuning-config.php:184
+msgid "You can add multiple question-answer pairs for each important topic."
+msgstr "Vous pouvez ajouter plusieurs paires question-réponse pour chaque sujet important."
+
+#: admin/views/fine-tuning-config.php:185
+msgid "Include variations of common questions to improve training effectiveness."
+msgstr "Incluez des variations de questions courantes pour améliorer l'efficacité de l'entraînement."
+
+#. translators: %s: Examples Preview (%1$d of %2$d)
+#: admin/views/fine-tuning-config.php:202
+#, php-format
+msgid "Example Preview (%1$d of %2$d)"
+msgstr "Aperçu de l'exemple (%1$d sur %2$d)"
+
+#. translators: %s: Examples Example #%d
+#: admin/views/fine-tuning-config.php:210
+#, php-format
+msgid "Example #%d"
+msgstr "Exemple n°%d"
+
+#: admin/views/fine-tuning-config.php:215
+#: includes/RagManager.php:1497
+msgid "Question:"
+msgstr "Question :"
+
+#: admin/views/fine-tuning-config.php:218
+msgid "Response:"
+msgstr "Réponse :"
+
+#: admin/views/fine-tuning-config.php:232
+msgid "Start Model Training"
+msgstr "Démarrer l'entraînement du modèle"
+
+#: admin/views/fine-tuning-config.php:237
+msgid "OpenAI Information"
+msgstr "Informations OpenAI"
+
+#: admin/views/fine-tuning-config.php:239
+msgid "Base Model:"
+msgstr "Modèle de base :"
+
+#: admin/views/fine-tuning-config.php:240
+msgid "Estimated Time:"
+msgstr "Temps estimé :"
+
+#: admin/views/fine-tuning-config.php:240
+msgid "30-60 minutes"
+msgstr "30-60 minutes"
+
+#: admin/views/fine-tuning-config.php:241
+msgid "Approximate Cost:"
+msgstr "Coût approximatif :"
+
+#: admin/views/fine-tuning-config.php:241
+msgid "$0.008 per 1K tokens (training) +"
+msgstr "$0.008 par 1K jetons (entraînement) +"
+
+#: admin/views/fine-tuning-config.php:241
+msgid "$0.012-0.016 per 1K tokens (usage)"
+msgstr "$0.012-0.016 par 1K jetons (utilisation)"
+
+#. translators: %s: API Error: %s
+#: admin/views/fine-tuning-config.php:248
+#, php-format
+msgid "API Error: %s"
+msgstr "Erreur API : %s"
+
+#: admin/views/fine-tuning-config.php:250
+msgid "OpenAI API Connected"
+msgstr "API OpenAI connectée"
+
+#: admin/views/fine-tuning-config.php:256
+msgid "Dataset Summary"
+msgstr "Résumé de l'ensemble de données"
+
+#: admin/views/fine-tuning-config.php:258
+msgid "Examples:"
+msgstr "Exemples :"
+
+#: admin/views/fine-tuning-config.php:259
+msgid "Size:"
+msgstr "Taille :"
+
+#: admin/views/fine-tuning-config.php:260
+msgid "Words:"
+msgstr "Mots :"
+
+#: admin/views/fine-tuning-config.php:264
+msgid "At least 10 examples are recommended for effective training."
+msgstr "Au moins 10 exemples sont recommandés pour un entraînement efficace."
+
+#: admin/views/fine-tuning-config.php:270
+msgid "Start New Training"
+msgstr "Démarrer un nouvel entraînement"
+
+#: admin/views/fine-tuning-config.php:271
+msgid "When you start training, your dataset will be sent to OpenAI to create a personalized model. This process can take between 30 minutes and several hours."
+msgstr "Lorsque vous démarrez l'entraînement, votre ensemble de données sera envoyé à OpenAI pour créer un modèle personnalisé. Ce processus peut prendre entre 30 minutes et plusieurs heures."
+
+#: admin/views/fine-tuning-config.php:279
+msgid "API Not Configured"
+msgstr "API non configurée"
+
+#: admin/views/fine-tuning-config.php:280
+msgid "Configure API"
+msgstr "Configurer l'API"
+
+#: admin/views/fine-tuning-config.php:282
+msgid "Are you sure you want to start training with the current data?"
+msgstr "Êtes-vous sûr de vouloir commencer l'entraînement avec les données actuelles ?"
+
+#: admin/views/fine-tuning-config.php:288
+msgid "Return to Dashboard"
+msgstr "Retour au tableau de bord"
+
+#: admin/views/fine-tuning-config.php:294
+msgid "If you already have an active model, you can continue using it while training a new one. When the new training is complete, you can select which model to use."
+msgstr "Si vous avez déjà un modèle actif, vous pouvez continuer à l'utiliser pendant l'entraînement d'un nouveau. Une fois le nouvel entraînement terminé, vous pourrez sélectionner le modèle à utiliser."
+
+#: admin/views/rag-config.php:2
+msgid "Cerebroly - RAG configuration"
+msgstr "Cerebroly - Configuration RAG"
+
+#: admin/views/rag-config.php:27
+msgid "Content Embedding"
+msgstr "Intégration du contenu"
+
+#: admin/views/rag-config.php:28
+msgid "Retrieval Settings"
+msgstr "Paramètres de récupération"
+
+#: admin/views/rag-config.php:29
+msgid "Generation Settings"
+msgstr "Paramètres de génération"
+
+#: admin/views/rag-config.php:30
+msgid "Content Preview"
+msgstr "Aperçu du contenu"
+
+#: admin/views/rag-config.php:31
+msgid "Test RAG"
+msgstr "Tester RAG"
+
+#: admin/views/rag-config.php:38
+msgid "RAG Statistics"
+msgstr "Statistiques RAG"
+
+#: admin/views/rag-config.php:77
+msgid "Reset RAG System"
+msgstr "Réinitialiser le système RAG"
+
+#: admin/views/rag-config.php:85
+msgid "About RAG"
+msgstr "À propos de RAG"
+
+#: admin/views/rag-config.php:86
+msgid "Retrieval-Augmented Generation (RAG) is an approach that combines specific information retrieval with natural language generation. Instead of training a model with all your content (fine-tuning), RAG works differently:"
+msgstr "La génération augmentée par récupération (RAG) est une approche qui combine la récupération d'informations spécifiques avec la génération de langage naturel. Au lieu d'entraîner un modèle avec tout votre contenu (affinage), RAG fonctionne différemment :"
+
+#: admin/views/rag-config.php:91
+msgid "Index"
+msgstr "Index"
+
+#: admin/views/rag-config.php:92
+msgid "Stores your content in a vector database that can be searched semantically."
+msgstr "Stocke votre contenu dans une base de données vectorielle pouvant être recherchée sémantiquement."
+
+#: admin/views/rag-config.php:96
+msgid "Retrieve"
+msgstr "Récupérer"
+
+#: admin/views/rag-config.php:97
+msgid "Finds relevant documents for a specific query using embedding similarity."
+msgstr "Trouve des documents pertinents pour une requête spécifique en utilisant la similarité d'intégration."
+
+#: admin/views/rag-config.php:101
+msgid "Enrich"
+msgstr "Enrichir"
+
+#: admin/views/rag-config.php:102
+msgid "Enhances the model's context with these documents for better responses."
+msgstr "Améliore le contexte du modèle avec ces documents pour de meilleures réponses."
+
+#: admin/views/rag-config.php:106
+msgid "Generate"
+msgstr "Générer"
+
+#: admin/views/rag-config.php:107
+msgid "Creates precise responses based on the enriched context."
+msgstr "Crée des réponses précises basées sur le contexte enrichi."
+
+#: admin/views/rag-config.php:114
+msgid "Configure Embedding Settings"
+msgstr "Configurer les paramètres d'intégration"
+
+#: admin/views/rag-config.php:115
+#: admin/views/rag-config.php:446
+msgid "Test RAG System"
+msgstr "Tester le système RAG"
+
+#: admin/views/rag-config.php:131
+msgid "Content Embedding Settings"
+msgstr "Paramètres d'intégration de contenu"
+
+#: admin/views/rag-config.php:133
+msgid "Configure how your content is processed and indexed in the RAG system. These settings affect the quality and precision of document retrieval."
+msgstr "Configurez la manière dont votre contenu est traité et indexé dans le système RAG. Ces paramètres affectent la qualité et la précision de la récupération des documents."
+
+#: admin/views/rag-config.php:153
+msgid "Model used to convert text into vectors. More advanced models offer better precision at higher cost."
+msgstr "Modèle utilisé pour convertir le texte en vecteurs. Les modèles plus avancés offrent une meilleure précision à un coût plus élevé."
+
+#: admin/views/rag-config.php:158
+msgid "Chunk Size"
+msgstr "Taille du morceau"
+
+#: admin/views/rag-config.php:163
+msgid "Maximum number of characters per chunk. Smaller chunks allow more precise searches but generate more fragments."
+msgstr "Nombre maximum de caractères par morceau. Des morceaux plus petits permettent des recherches plus précises mais génèrent plus de fragments."
+
+#: admin/views/rag-config.php:168
+msgid "Chunk Overlap"
+msgstr "Chevauchement de morceaux"
+
+#: admin/views/rag-config.php:173
+msgid "Number of characters that overlap between consecutive chunks. Helps maintain context between chunks."
+msgstr "Nombre de caractères qui se chevauchent entre des morceaux consécutifs. Aide à maintenir le contexte entre les morceaux."
+
+#: admin/views/rag-config.php:178
+#: admin/views/settings.php:139
+msgid "Content Sources"
+msgstr "Sources de contenu"
+
+#: admin/views/rag-config.php:184
+msgid "Include Posts"
+msgstr "Inclure les articles"
+
+#: admin/views/rag-config.php:190
+msgid "Include Pages"
+msgstr "Inclure les pages"
+
+#: admin/views/rag-config.php:196
+msgid "Include WooCommerce Products"
+msgstr "Inclure les produits WooCommerce"
+
+#: admin/views/rag-config.php:202
+msgid "Include uploaded files"
+msgstr "Inclure les fichiers téléchargés"
+
+#: admin/views/rag-config.php:205
+msgid "Select which content sources to include in the RAG index."
+msgstr "Sélectionnez les sources de contenu à inclure dans l'index RAG."
+
+#: admin/views/rag-config.php:210
+#: admin/views/rag-config.php:312
+#: admin/views/rag-config.php:387
+msgid "Save Settings"
+msgstr "Enregistrer les paramètres"
+
+#: admin/views/rag-config.php:215
+msgid "Manual Indexing"
+msgstr "Indexation manuelle"
+
+#: admin/views/rag-config.php:217
+msgid "You can manually start content indexing to update the RAG knowledge base. This process may take several minutes depending on the amount of content."
+msgstr "Vous pouvez démarrer manuellement l'indexation de contenu pour mettre à jour la base de connaissances RAG. Ce processus peut prendre plusieurs minutes selon la quantité de contenu."
+
+#: admin/views/rag-config.php:223
+msgid "Force full reindexing"
+msgstr "Forcer la réindexation complète"
+
+#: admin/views/rag-config.php:225
+msgid "This will delete all existing embeddings and reindex all content."
+msgstr "Cela supprimera toutes les intégrations existantes et réindexera tout le contenu."
+
+#: admin/views/rag-config.php:230
+msgid "Start Custom Indexing"
+msgstr "Démarrer l'indexation personnalisée"
+
+#: admin/views/rag-config.php:236
+msgid "Indexing Progress"
+msgstr "Progression de l'indexation"
+
+#: admin/views/rag-config.php:241
+msgid "Preparing indexing..."
+msgstr "Préparation de l'indexation..."
+
+#: admin/views/rag-config.php:251
+msgid "Retrieval Configuration"
+msgstr "Configuration de la récupération"
+
+#: admin/views/rag-config.php:253
+msgid "These settings control how documents are retrieved from the knowledge base when a user sends a query. They affect the relevance and number of documents included in the context."
+msgstr "Ces paramètres contrôlent la manière dont les documents sont récupérés de la base de connaissances lorsqu'un utilisateur envoie une requête. Ils affectent la pertinence et le nombre de documents inclus dans le contexte."
+
+#: admin/views/rag-config.php:261
+msgid "Documents to Retrieve"
+msgstr "Documents à récupérer"
+
+#: admin/views/rag-config.php:265
+msgid "Number of most relevant fragments to include in the context. More fragments provide more information but may dilute relevance."
+msgstr "Nombre de fragments les plus pertinents à inclure dans le contexte. Plus de fragments fournissent plus d'informations mais peuvent diluer la pertinence."
+
+#: admin/views/rag-config.php:270
+msgid "Similarity Threshold"
+msgstr "Seuil de similarité"
+
+#: admin/views/rag-config.php:277
+msgid "Minimum similarity threshold to include a document. Higher values require greater relevance."
+msgstr "Seuil de similarité minimum pour inclure un document. Des valeurs plus élevées exigent une plus grande pertinence."
+
+#: admin/views/rag-config.php:282
+msgid "Search Method"
+msgstr "Méthode de recherche"
+
+#: admin/views/rag-config.php:287
+msgid "Cosine Similarity (Recommended)"
+msgstr "Similarité Cosinus (Recommandé)"
+
+#: admin/views/rag-config.php:290
+msgid "Dot Product"
+msgstr "Produit scalaire"
+
+#: admin/views/rag-config.php:293
+msgid "Euclidean Distance"
+msgstr "Distance Euclidienne"
+
+#: admin/views/rag-config.php:295
+msgid "Mathematical method to calculate similarity between queries and documents."
+msgstr "Méthode mathématique pour calculer la similarité entre les requêtes et les documents."
+
+#: admin/views/rag-config.php:300
+msgid "Query Rewriting"
+msgstr "Réécriture de requête"
+
+#: admin/views/rag-config.php:305
+msgid "Enable query rewriting"
+msgstr "Activer la réécriture de requête"
+
+#: admin/views/rag-config.php:307
+msgid "Uses AI to reformulate the user's query to improve retrieval. Adds an additional step but may improve results."
+msgstr "Utilise l'IA pour reformuler la requête de l'utilisateur afin d'améliorer la récupération. Ajoute une étape supplémentaire mais peut améliorer les résultats."
+
+#: admin/views/rag-config.php:319
+msgid "Response Generation Settings"
+msgstr "Paramètres de génération de réponse"
+
+#: admin/views/rag-config.php:321
+msgid "Configure how the AI generates responses using the retrieved content. These settings affect the style, length, and characteristics of the answers provided to users."
+msgstr "Configurez la manière dont l'IA génère les réponses en utilisant le contenu récupéré. Ces paramètres affectent le style, la longueur et les caractéristiques des réponses fournies aux utilisateurs."
+
+#: admin/views/rag-config.php:333
+#: admin/views/settings.php:215
+msgid "Base Models"
+msgstr "Modèles de base"
+
+#: admin/views/rag-config.php:341
+#: admin/views/settings.php:223
+msgid "Fine-Tuned Models"
+msgstr "Modèles affinés"
+
+#: admin/views/rag-config.php:350
+msgid "Model used to generate responses. More advanced models offer better understanding but at higher cost."
+msgstr "Modèle utilisé pour générer les réponses. Les modèles plus avancés offrent une meilleure compréhension mais à un coût plus élevé."
+
+#: admin/views/rag-config.php:355
+msgid "Temperature"
+msgstr "Température"
+
+#: admin/views/rag-config.php:362
+msgid "Controls response creativity. Lower values generate more deterministic and precise responses."
+msgstr "Contrôle la créativité de la réponse. Des valeurs plus basses génèrent des réponses plus déterministes et précises."
+
+#: admin/views/rag-config.php:367
+msgid "Maximum Length"
+msgstr "Longueur maximale"
+
+#: admin/views/rag-config.php:372
+msgid "Maximum token limit in the response."
+msgstr "Limite maximale de jetons dans la réponse."
+
+#: admin/views/rag-config.php:377
+msgid "System Prompt"
+msgstr "Prompt du système"
+
+#: admin/views/rag-config.php:380
+msgid "You are a specialized assistant for the website. Respond to queries based only on the information in the following context. If the information is not in the context, honestly indicate that you don't have that information."
+msgstr "Vous êtes un assistant spécialisé pour le site web. Répondez aux requêtes uniquement sur la base des informations du contexte suivant. Si l'information n'est pas dans le contexte, indiquez honnêtement que vous n'avez pas cette information."
+
+#: admin/views/rag-config.php:381
+msgid "Base instructions for the model. Customize according to your specific needs."
+msgstr "Instructions de base pour le modèle. Personnalisez selon vos besoins spécifiques."
+
+#: admin/views/rag-config.php:394
+msgid "Indexed Content Preview"
+msgstr "Aperçu du contenu indexé"
+
+#: admin/views/rag-config.php:396
+msgid "This section shows a preview of content that has been or will be indexed in the RAG system. Use the filters to explore different content types."
+msgstr "Cette section affiche un aperçu du contenu qui a été ou sera indexé dans le système RAG. Utilisez les filtres pour explorer différents types de contenu."
+
+#: admin/views/rag-config.php:403
+msgid "All types"
+msgstr "Tous types"
+
+#: admin/views/rag-config.php:404
+#: includes/RagManager.php:317
+msgid "Posts and pages"
+msgstr "Articles et pages"
+
+#: admin/views/rag-config.php:405
+#: includes/RagManager.php:321
+msgid "Uploaded files"
+msgstr "Fichiers téléchargés"
+
+#: admin/views/rag-config.php:406
+msgid "Training data"
+msgstr "Données d'entraînement"
+
+#: admin/views/rag-config.php:409
+msgid "Search in content..."
+msgstr "Rechercher dans le contenu..."
+
+#: admin/views/rag-config.php:411
+msgid "Load Preview"
+msgstr "Charger l'aperçu"
+
+#: admin/views/rag-config.php:416
+msgid "Total Elements"
+msgstr "Éléments totaux"
+
+#: admin/views/rag-config.php:420
+msgid "Posts & Pages"
+msgstr "Articles & Pages"
+
+#: admin/views/rag-config.php:435
+msgid "Loading content..."
+msgstr "Chargement du contenu..."
+
+#: admin/views/rag-config.php:448
+msgid "Test the RAG system with sample queries to see how it responds. This helps you evaluate and fine-tune the system before deploying it for users."
+msgstr "Testez le système RAG avec des exemples de requêtes pour voir comment il répond. Cela vous aide à évaluer et à affiner le système avant de le déployer pour les utilisateurs."
+
+#: admin/views/rag-config.php:452
+msgid "Enter your query here..."
+msgstr "Entrez votre requête ici..."
+
+#: admin/views/rag-config.php:453
+msgid "Submit Query"
+msgstr "Soumettre la requête"
+
+#: admin/views/rag-config.php:457
+msgid "RAG Process"
+msgstr "Processus RAG"
+
+#: admin/views/rag-config.php:460
+msgid "1. Processed Query"
+msgstr "1. Requête traitée"
+
+#: admin/views/rag-config.php:465
+msgid "2. Retrieved Documents"
+msgstr "2. Documents récupérés"
+
+#: admin/views/rag-config.php:470
+msgid "3. Generated Response"
+msgstr "3. Réponse générée"
+
+#: admin/views/rag-config.php:477
+msgid "Query History"
+msgstr "Historique des requêtes"
+
+#: admin/views/rag-config.php:479
+msgid "Query history will appear here."
+msgstr "L'historique des requêtes apparaîtra ici."
+
+#: admin/views/settings.php:5
+msgid "Settings saved successfully!"
+msgstr "Paramètres enregistrés avec succès !"
+
+#: admin/views/settings.php:41
+msgid "API Configuration"
+msgstr "Configuration de l'API"
+
+#: admin/views/settings.php:46
+#: admin/views/settings.php:199
+msgid "⚠️ Important: OpenAI Terms of Service"
+msgstr "⚠️ Important : Conditions d'utilisation d'OpenAI"
+
+#: admin/views/settings.php:47
+#: admin/views/settings.php:200
+msgid "This plugin integrates with the OpenAI API. Please be aware that while this plugin is GPL, your use of the OpenAI API is subject to OpenAI's own Terms of Service and Usage Policies."
+msgstr "Ce plugin s'intègre à l'API OpenAI. Veuillez noter que bien que ce plugin soit sous licence GPL, votre utilisation de l'API OpenAI est soumise aux Conditions Générales d'Utilisation et aux Politiques d'Utilisation d'OpenAI."
+
+#: admin/views/settings.php:52
+msgid "OpenAI API Key"
+msgstr "Clé API OpenAI"
+
+#. translators: %s: The source of the API key (e.g., Environment Variable, wp-config.php)
+#: admin/views/settings.php:74
+#, php-format
+msgid "API key loaded from %s."
+msgstr "Clé API chargée depuis %s."
+
+#. translators: %s: partial API key for preview (first 7 and last 4 characters)
+#: admin/views/settings.php:76
+#, php-format
+msgid "Key preview: %s"
+msgstr "Aperçu de la clé : %s"
+
+#: admin/views/settings.php:79
+msgid "API key loaded from database (fallback). It is recommended to define the key in wp-config.php or your server's environment for better security."
+msgstr "Clé API chargée depuis la base de données (solution de repli). Il est recommandé de définir la clé dans wp-config.php ou l'environnement de votre serveur pour une meilleure sécurité."
+
+#: admin/views/settings.php:97
+msgid "Choose between the two available modes to answer queries:"
+msgstr "Choisissez entre les deux modes disponibles pour répondre aux requêtes :"
+
+#: admin/views/settings.php:101
+#: admin/views/settings.php:105
+msgid "Processing Method"
+msgstr "Méthode de traitement"
+
+#: admin/views/settings.php:109
+msgid "Fine-tuning (Classic Mode)"
+msgstr "Affinage (Mode Classique)"
+
+#: admin/views/settings.php:112
+msgid "Creates a model specifically trained with your content. Requires retraining when content changes."
+msgstr "Crée un modèle spécifiquement entraîné avec votre contenu. Nécessite un réentraînement lorsque le contenu change."
+
+#: admin/views/settings.php:118
+msgid "RAG (Retrieval-Augmented Generation)"
+msgstr "RAG (Génération Augmentée par Récupération)"
+
+#: admin/views/settings.php:121
+msgid "Uses vector search to retrieve relevant content for each query. Automatically updates when content changes."
+msgstr "Utilise la recherche vectorielle pour récupérer le contenu pertinent pour chaque requête. Se met à jour automatiquement lorsque le contenu change."
+
+#: admin/views/settings.php:125
+msgid "Configure RAG System"
+msgstr "Configurer le système RAG"
+
+#: admin/views/settings.php:145
+msgid "Posts and Pages"
+msgstr "Articles et pages"
+
+#: admin/views/settings.php:150
+msgid "Include posts and pages in training"
+msgstr "Inclure les articles et les pages dans l'entraînement"
+
+#: admin/views/settings.php:153
+msgid "Extracts content from all published posts and pages on your site."
+msgstr "Extrait le contenu de tous les articles et pages publiés sur votre site."
+
+#: admin/views/settings.php:158
+msgid "Media Library"
+msgstr "Bibliothèque de médias"
+
+#: admin/views/settings.php:163
+msgid "Include files from the media library"
+msgstr "Inclure les fichiers de la bibliothèque de médias"
+
+#: admin/views/settings.php:166
+msgid "Extracts text from text files in your media library."
+msgstr "Extrait le texte des fichiers texte de votre bibliothèque de médias."
+
+#: admin/views/settings.php:168
+msgid "This can significantly increase training time."
+msgstr "Cela peut augmenter considérablement le temps d'entraînement."
+
+#: admin/views/settings.php:173
+msgid "AI Enhancement"
+msgstr "Amélioration par l'IA"
+
+#: admin/views/settings.php:178
+msgid "Use AI to generate enhanced training datasets"
+msgstr "Utiliser l'IA pour générer des ensembles de données d'entraînement améliorés"
+
+#: admin/views/settings.php:181
+msgid "Uses the OpenAI API to generate high-quality question and answer pairs."
+msgstr "Utilise l'API OpenAI pour générer des paires question-réponse de haute qualité."
+
+#: admin/views/settings.php:183
+msgid "This option consumes additional API tokens and may increase costs."
+msgstr "Cette option consomme des jetons API supplémentaires et peut augmenter les coûts."
+
+#: admin/views/settings.php:194
+msgid "Fine-Tuning Base Model"
+msgstr "Modèle de base pour l'affinage"
+
+#: admin/views/settings.php:205
+msgid "Error loading models:"
+msgstr "Erreur de chargement des modèles :"
+
+#: admin/views/settings.php:207
+msgid "Please check your OpenAI API key configuration."
+msgstr "Veuillez vérifier la configuration de votre clé API OpenAI."
+
+#: admin/views/settings.php:212
+msgid "Select Base Model"
+msgstr "Sélectionner le modèle de base"
+
+#: admin/views/settings.php:233
+msgid "No fine-tuned models available"
+msgstr "Aucun modèle affiné disponible"
+
+#: admin/views/settings.php:240
+msgid "Select the OpenAI base model for fine-tuning."
+msgstr "Sélectionnez le modèle de base OpenAI pour l'affinage."
+
+#: admin/views/settings.php:251
+msgid "Advanced OpenAI Configuration"
+msgstr "Configuration avancée d'OpenAI"
+
+#: admin/views/settings.php:256
+msgid "OpenAI offers several fine-tuning and customization options:"
+msgstr "OpenAI offre plusieurs options d'affinage et de personnalisation :"
+
+#: admin/views/settings.php:260
+msgid "Approximate fine-tuning prices"
+msgstr "Prix approximatifs de l'affinage"
+
+#: admin/views/settings.php:263
+msgid "Training:"
+msgstr "Entraînement :"
+
+#: admin/views/settings.php:264
+msgid "Fine-tuned model usage:"
+msgstr "Utilisation du modèle affiné :"
+
+#. translators: %s: URL to OpenAI pricing page
+#: admin/views/settings.php:271
+#, php-format
+msgid "Prices may vary. Check the <a href=\"%s\" target=\"_blank\">OpenAI pricing page</a> for updated information."
+msgstr "Les prix peuvent varier. Consultez la <a href=\"%s\" target=\"_blank\">page de tarification d'OpenAI</a> pour des informations actualisées."
+
+#: admin/views/settings.php:277
+msgid "Content limit for AI enhancement"
+msgstr "Limite de contenu pour l'amélioration par l'IA"
+
+#: admin/views/settings.php:284
+msgid "Maximum number of content items that will be processed with the OpenAI API."
+msgstr "Nombre maximum d'éléments de contenu qui seront traités avec l'API OpenAI."
+
+#: admin/views/settings.php:285
+msgid "A higher number improves dataset quality but increases cost."
+msgstr "Un nombre plus élevé améliore la qualité de l'ensemble de données mais augmente les coûts."
+
+#: admin/views/settings.php:286
+msgid "Use 0 to process all content."
+msgstr "Utilisez 0 pour traiter tout le contenu."
+
+#: admin/views/settings.php:297
+msgid "Rate Limiting Protection"
+msgstr "Protection contre la limitation de débit"
+
+#: admin/views/settings.php:303
+msgid "Enable Rate Limiting"
+msgstr "Activer la limitation de débit"
+
+#: admin/views/settings.php:308
+msgid "Protect against API overuse"
+msgstr "Protéger contre l'utilisation excessive de l'API"
+
+#: admin/views/settings.php:311
+msgid "Prevents excessive API calls to avoid unexpected costs."
+msgstr "Empêche les appels API excessifs pour éviter les coûts inattendus."
+
+#: admin/views/settings.php:317
+msgid "Requests per Minute"
+msgstr "Requêtes par minute"
+
+#: admin/views/settings.php:323
+msgid "Maximum API requests per minute (recommended: 50)."
+msgstr "Nombre maximal de requêtes API par minute (recommandé : 50)."
+
+#: admin/views/settings.php:333
+msgid "API Access Control"
+msgstr "Contrôle d'accès API"
+
+#: admin/views/settings.php:338
+msgid "Configure which domains can access the chat API from external JavaScript applications."
+msgstr "Configurez les domaines qui peuvent accéder à l'API de chat depuis des applications JavaScript externes."
+
+#: admin/views/settings.php:342
+msgid "Allowed Domains"
+msgstr "Domaines autorisés"
+
+#. translators: %d: Domain number
+#: admin/views/settings.php:364
+#, php-format
+msgid "Domain %d"
+msgstr "Domaine %d"
+
+#: admin/views/settings.php:372
+#: admin/views/settings.php:495
+msgid "Important:"
+msgstr "Important :"
+
+#: admin/views/settings.php:373
+msgid "Only domains listed here will be able to access the chat API from external JavaScript applications."
+msgstr "Seuls les domaines listés ici pourront accéder à l'API de chat depuis des applications JavaScript externes."
+
+#: admin/views/settings.php:375
+msgid "Include the full protocol (https:// or http://)"
+msgstr "Incluez le protocole complet (https:// ou http://)"
+
+#: admin/views/settings.php:376
+msgid "Leave empty fields for unused slots"
+msgstr "Laissez les champs vides pour les emplacements non utilisés"
+
+#. translators: %d: Maximum number of domains allowed
+#: admin/views/settings.php:380
+#, php-format
+msgid "Maximum %d domains allowed"
+msgstr "Maximum %d domaines autorisés"
+
+#: admin/views/settings.php:433
+msgid "CORS Headers"
+msgstr "En-têtes CORS"
+
+#: admin/views/settings.php:438
+msgid "Enable CORS headers for API responses"
+msgstr "Activer les en-têtes CORS pour les réponses de l'API"
+
+#: admin/views/settings.php:441
+msgid "Required for external JavaScript applications to access the API."
+msgstr "Requis pour que les applications JavaScript externes puissent accéder à l'API."
+
+#: admin/views/settings.php:442
+msgid "Only enables CORS for domains in the allowed list above."
+msgstr "N'active CORS que pour les domaines figurant dans la liste autorisée ci-dessus."
+
+#: admin/views/settings.php:454
+msgid "Chat Sharing"
+msgstr "Partage de chat"
+
+#: admin/views/settings.php:459
+msgid "Embed your chat on external websites using JavaScript or iFrame. Only domains in the allowed list above can use these snippets."
+msgstr "Intégrez votre chat sur des sites web externes à l'aide de JavaScript ou d'un iFrame. Seuls les domaines figurant dans la liste autorisée ci-dessus peuvent utiliser ces extraits."
+
+#: admin/views/settings.php:463
+msgid "JavaScript Snippet"
+msgstr "Extrait JavaScript"
+
+#: admin/views/settings.php:475
+msgid "Easy Integration:"
+msgstr "Intégration facile :"
+
+#: admin/views/settings.php:476
+msgid "Copy this code and paste it into your external website's HTML."
+msgstr "Copiez ce code et collez-le dans le code HTML de votre site web externe."
+
+#: admin/views/settings.php:478
+msgid "Automatically creates a floating chat widget"
+msgstr "Crée automatiquement un widget de chat flottant"
+
+#: admin/views/settings.php:480
+msgid "Respects your WordPress theme and appearance settings"
+msgstr "Respecte les paramètres de thème et d'apparence de votre WordPress"
+
+#: admin/views/settings.php:482
+msgid "Positioned in bottom-right corner with responsive design"
+msgstr "Positionné en bas à droite avec un design réactif"
+
+#: admin/views/settings.php:485
+msgid "Copy JavaScript Snippet"
+msgstr "Copier l'extrait JavaScript"
+
+#: admin/views/settings.php:491
+msgid "Security Notice"
+msgstr "Avis de sécurité"
+
+#: admin/views/settings.php:496
+msgid "These snippets will only work on domains added to the \"Allowed Domains\" list above."
+msgstr "Ces extraits ne fonctionneront que sur les domaines ajoutés à la liste des \"Domaines autorisés\" ci-dessus."
+
+#: admin/views/settings.php:497
+msgid "Make sure to:"
+msgstr "Assurez-vous de :"
+
+#: admin/views/settings.php:499
+msgid "Add your target domain to the allowed domains list"
+msgstr "Ajouter votre domaine cible à la liste des domaines autorisés"
+
+#: admin/views/settings.php:501
+msgid "Enable CORS headers if using JavaScript snippet"
+msgstr "Activer les en-têtes CORS si vous utilisez l'extrait JavaScript"
+
+#: admin/views/settings.php:503
+msgid "Test the integration on your target domain"
+msgstr "Tester l'intégration sur votre domaine cible"
+
+#: includes/AppearanceManager.php:61
+msgid "Cerebroly Theme"
+msgstr "Thème Cerebroly"
+
+#: includes/AppearanceManager.php:62
+msgid "Official Cerebroly theme with modern design and smart features"
+msgstr "Thème officiel Cerebroly avec un design moderne et des fonctionnalités intelligentes"
+
+#: includes/AppearanceManager.php:73
+msgid "Dark Theme"
+msgstr "Thème sombre"
+
+#: includes/AppearanceManager.php:74
+msgid "Elegant dark theme perfect for modern websites and startups"
+msgstr "Thème sombre élégant parfait pour les sites web modernes et les startups"
+
+#: includes/AppearanceManager.php:158
+msgid "Cerebroly - Appearance"
+msgstr "Cerebroly - Apparence"
+
+#: includes/AppearanceManager.php:159
+msgid "Appearance"
+msgstr "Apparence"
+
+#: includes/AppearanceManager.php:170
+msgid "Cerebroly - Settings"
+msgstr "Cerebroly - Réglages"
+
+#: includes/AppearanceManager.php:171
+msgid "Settings"
+msgstr "Réglages"
+
+#: includes/AppearanceManager.php:338
+msgid "Custom Icon Upload"
+msgstr "Téléchargement d'icône personnalisée"
+
+#: includes/AppearanceManager.php:340
+msgid "Upload a custom icon image (PNG, JPG, WEBP recommended). Optimal size: 60x60px or larger. After uploading, the custom image will automatically be used as your chat icon."
+msgstr "Téléchargez une image d'icône personnalisée (PNG, JPG, WEBP recommandé). Taille optimale : 60x60px ou plus. Après le téléchargement, l'image personnalisée sera automatiquement utilisée comme icône de chat."
+
+#: includes/AppearanceManager.php:345
+msgid "Choose Custom Image"
+msgstr "Choisir une image personnalisée"
+
+#: includes/AppearanceManager.php:350
+msgid "Remove Custom Image"
+msgstr "Supprimer l'image personnalisée"
+
+#: includes/AppearanceManager.php:363
+#: includes/AppearanceManager.php:376
+#: includes/AppearanceManager.php:383
+msgid "Custom icon preview"
+msgstr "Aperçu de l'icône personnalisée"
+
+#: includes/AppearanceManager.php:402
+msgid "Bottom Right"
+msgstr "En bas à droite"
+
+#: includes/AppearanceManager.php:403
+msgid "Bottom Left"
+msgstr "En bas à gauche"
+
+#: includes/AppearanceManager.php:404
+msgid "Center"
+msgstr "Centre"
+
+#: includes/AppearanceManager.php:426
+msgid "Medium (400×500px)"
+msgstr "Moyenne (400×500px)"
+
+#. translators: %d is the message number
+#: includes/AppearanceManager.php:455
+msgid "Message:"
+msgstr "Message :"
+
+#: includes/AppearanceManager.php:462
+#: includes/AppearanceManager.php:505
+#: includes/AppearanceManager.php:549
+msgid "Enter welcome message..."
+msgstr "Entrez le message de bienvenue..."
+
+#: includes/AppearanceManager.php:465
+#: includes/AppearanceManager.php:508
+#: includes/AppearanceManager.php:551
+msgid "Remove Message"
+msgstr "Supprimer le message"
+
+#: includes/AppearanceManager.php:475
+msgid "Add Message"
+msgstr "Ajouter un message"
+
+#: includes/AppearanceManager.php:479
+#: includes/AppearanceManager.php:596
+msgid "Reset to Default"
+msgstr "Réinitialiser par défaut"
+
+#: includes/AppearanceManager.php:485
+msgid "Messages will be displayed in order with a typing effect. You can use HTML for formatting."
+msgstr "Les messages seront affichés dans l'ordre avec un effet de frappe. Vous pouvez utiliser du HTML pour la mise en forme."
+
+#: includes/AppearanceManager.php:498
+#: includes/AppearanceManager.php:520
+#: includes/AppearanceManager.php:542
+msgid "Message"
+msgstr "Message"
+
+#: includes/AppearanceManager.php:532
+msgid "Are you sure you want to reset to default messages?"
+msgstr "Êtes-vous sûr de vouloir réinitialiser les messages par défaut ?"
+
+#: includes/AppearanceManager.php:568
+msgid "👋 Hey there! I’m here to help you with whatever you need. Want to learn more, ask questions, or get things done? Just tell me, and we’ll figure it out together!"
+msgstr "👋 Salut ! Je suis là pour vous aider avec tout ce dont vous avez besoin. Vous voulez en savoir plus, poser des questions ou faire avancer les choses ? Dites-le-moi, et nous trouverons une solution ensemble !"
+
+#: includes/AppearanceManager.php:577
+msgid "I'm sorry, but I'm having trouble processing your request right now. Please try again in a moment or contact our support team if the issue persists."
+msgstr "Je suis désolé, mais je rencontre des difficultés pour traiter votre demande en ce moment. Veuillez réessayer dans un instant ou contacter notre équipe de support si le problème persiste."
+
+#: includes/AppearanceManager.php:591
+msgid "Enter error message..."
+msgstr "Entrez le message d'erreur..."
+
+#: includes/AppearanceManager.php:606
+msgid "Are you sure you want to reset to the default error message?"
+msgstr "Êtes-vous sûr de vouloir réinitialiser le message d'erreur par défaut ?"
+
+#: includes/AppearanceManager.php:640
+msgid "Typing Effect"
+msgstr "Effet de frappe"
+
+#: includes/AppearanceManager.php:641
+msgid "Light Mode"
+msgstr "Mode clair"
+
+#: includes/AppearanceManager.php:642
+msgid "Dark Mode"
+msgstr "Mode sombre"
+
+#: includes/AppearanceManager.php:643
+msgid "Emoji Support"
+msgstr "Support Emoji"
+
+#: includes/ContentExtractor.php:291
+#: includes/ContentExtractor.php:438
+msgid "Title: "
+msgstr "Titre : "
+
+#: includes/ContentExtractor.php:292
+#: includes/ContentExtractor.php:341
+msgid "Type: "
+msgstr "Type : "
+
+#: includes/ContentExtractor.php:293
+msgid "URL: "
+msgstr "URL : "
+
+#: includes/ContentExtractor.php:296
+msgid "Summary: "
+msgstr "Résumé : "
+
+#: includes/ContentExtractor.php:301
+msgid "Metadata:"
+msgstr "Métadonnées :"
+
+#: includes/ContentExtractor.php:307
+#: includes/ContentExtractor.php:341
+#: includes/ContentExtractor.php:442
+msgid "Content: "
+msgstr "Contenu : "
+
+#: includes/ContentExtractor.php:341
+msgid "File: "
+msgstr "Fichier : "
+
+#: includes/ContentExtractor.php:436
+msgid "Your task is to generate high-quality question-answer pairs based on the provided content. Thoroughly analyze the text and generate 5-7 question-answer pairs that are relevant, specific, and directly based on the content. Questions should be varied and cover different aspects of the content. Answers should be extracted directly from the provided text. Return the result in JSON format with the structure: [{\"question\": \"question 1\", \"answer\": \"answer 1\"}, ...]"
+msgstr "Votre tâche est de générer des paires question-réponse de haute qualité basées sur le contenu fourni. Analysez attentivement le texte et générez 5 à 7 paires question-réponse pertinentes, spécifiques et directement basées sur le contenu. Les questions doivent être variées et couvrir différents aspects du contenu. Les réponses doivent être extraites directement du texte fourni. Retournez le résultat au format JSON avec la structure : [{\"question\": \"question 1\", \"answer\": \"réponse 1\"}, ...]"
+
+#: includes/ContentExtractor.php:440
+msgid "Keywords: "
+msgstr "Mots-clés : "
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:507
+#: includes/ContentExtractor.php:683
+#, php-format
+msgid "What is %s?"
+msgstr "Qu'est-ce que %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:509
+#, php-format
+msgid "Tell me more about %s?"
+msgstr "Dites-m'en plus sur %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:511
+#, php-format
+msgid "Explain in detail about %s"
+msgstr "Expliquez en détail %s"
+
+#. translators: %1$s: Keyword, %2$s: Title of the content
+#: includes/ContentExtractor.php:517
+#, php-format
+msgid "What is the relationship between %1$s and %2$s?"
+msgstr "Quelle est la relation entre %1$s et %2$s ?"
+
+#. translators: %1$s: Keyword, %2$s: Title of the content
+#. translators: %1$s: Section name, %2$s: Title of the content
+#: includes/ContentExtractor.php:519
+#: includes/ContentExtractor.php:527
+#, php-format
+msgid "What information is there about %1$s in %2$s?"
+msgstr "Quelles informations y a-t-il sur %1$s dans %2$s ?"
+
+#. translators: %1$s: Section name, %2$s: Title of the content
+#: includes/ContentExtractor.php:529
+#, php-format
+msgid "Can you explain the %1$s section in %2$s?"
+msgstr "Pouvez-vous expliquer la section %1$s dans %2$s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:536
+#, php-format
+msgid "What is the article %s about?"
+msgstr "De quoi parle l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:538
+#, php-format
+msgid "What are the main points of the post %s?"
+msgstr "Quels sont les points principaux de l'article %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:541
+#: includes/ContentExtractor.php:749
+#, php-format
+msgid "What information does the page %s contain?"
+msgstr "Quelles informations la page %s contient-elle ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:543
+#: includes/ContentExtractor.php:751
+#, php-format
+msgid "What is the main purpose of the page %s?"
+msgstr "Quel est le but principal de la page %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:546
+#: includes/ContentExtractor.php:782
+#, php-format
+msgid "What information does the file %s contain?"
+msgstr "Quelles informations le fichier %s contient-il ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:548
+#, php-format
+msgid "What is the content of the document %s?"
+msgstr "Quel est le contenu du document %s ?"
+
+#: includes/ContentExtractor.php:597
+msgid "Title"
+msgstr "Titre"
+
+#: includes/ContentExtractor.php:599
+msgid "Summary"
+msgstr "Résumé"
+
+#: includes/ContentExtractor.php:600
+msgid "Content"
+msgstr "Contenu"
+
+#: includes/ContentExtractor.php:601
+msgid "Metadata"
+msgstr "Métadonnées"
+
+#: includes/ContentExtractor.php:629
+msgid "What is this website about?"
+msgstr "De quoi parle ce site web ?"
+
+#. translators: %1$s: Site name, %2$s: Site description
+#: includes/ContentExtractor.php:633
+#, php-format
+msgid "This website is %1$s, which focuses on %2$s"
+msgstr "Ce site web est %1$s, qui se concentre sur %2$s"
+
+#: includes/ContentExtractor.php:635
+msgid "providing relevant information and resources to our visitors."
+msgstr "fournissant des informations et des ressources pertinentes à nos visiteurs."
+
+#. translators: %s: Site name
+#: includes/ContentExtractor.php:640
+#, php-format
+msgid "What type of content can I find on %s?"
+msgstr "Quel type de contenu puis-je trouver sur %s ?"
+
+#. translators: %s: Site name
+#: includes/ContentExtractor.php:642
+#, php-format
+msgid "On %s you can find a variety of content including articles, informational pages, and resources related to our subject matter."
+msgstr "Sur %s, vous pouvez trouver une variété de contenus, y compris des articles, des pages d'information et des ressources liées à notre sujet."
+
+#. translators: %s: Site name
+#: includes/ContentExtractor.php:646
+#, php-format
+msgid "How can I contact %s?"
+msgstr "Comment puis-je contacter %s ?"
+
+#: includes/ContentExtractor.php:647
+msgid "You can contact us through our contact form on the corresponding page, or through the social media channels you'll find on our website."
+msgstr "Vous pouvez nous contacter via notre formulaire de contact sur la page correspondante, ou via les réseaux sociaux que vous trouverez sur notre site web."
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:685
+#, php-format
+msgid "Tell me more about %s."
+msgstr "Dites-m'en plus sur %s."
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:687
+#, php-format
+msgid "Explain in detail about %s."
+msgstr "Expliquez en détail %s."
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:689
+#, php-format
+msgid "How can I use %s?"
+msgstr "Comment puis-je utiliser %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:691
+#, php-format
+msgid "What key information should I know about %s?"
+msgstr "Quelles informations clés devrais-je connaître sur %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:693
+#, php-format
+msgid "What does %s offer?"
+msgstr "Qu'est-ce que %s offre ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:695
+#, php-format
+msgid "Why is %s important?"
+msgstr "Pourquoi %s est-il important ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:697
+#, php-format
+msgid "Where can I get more information about %s?"
+msgstr "Où puis-je obtenir plus d'informations sur %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:699
+#, php-format
+msgid "What do I need to know about %s?"
+msgstr "Que dois-je savoir sur %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:701
+#, php-format
+msgid "Why should I care about %s?"
+msgstr "Pourquoi devrais-je me soucier de %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:703
+#, php-format
+msgid "What are the benefits of %s?"
+msgstr "Quels sont les avantages de %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:705
+#, php-format
+msgid "Explain how %s works."
+msgstr "Expliquez comment %s fonctionne."
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:707
+#, php-format
+msgid "What features does %s have?"
+msgstr "Quelles fonctionnalités %s possède-t-il ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:709
+#, php-format
+msgid "What makes %s unique?"
+msgstr "Qu'est-ce qui rend %s unique ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:711
+#, php-format
+msgid "How can I learn more about %s?"
+msgstr "Comment puis-je en savoir plus sur %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:716
+#, php-format
+msgid "What is the post about %s?"
+msgstr "De quoi parle l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:718
+#, php-format
+msgid "What are the key points of the post %s?"
+msgstr "Quels sont les points clés de l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:720
+#, php-format
+msgid "How does the post %s help me?"
+msgstr "Comment l'article %s m'aide-t-il ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:722
+#, php-format
+msgid "What problems does the post %s solve?"
+msgstr "Quels problèmes l'article %s résout-il ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:724
+#, php-format
+msgid "Who benefits from the post %s?"
+msgstr "Qui bénéficie de l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:726
+#, php-format
+msgid "When was the post %s published?"
+msgstr "Quand l'article %s a-t-il été publié ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:728
+#, php-format
+msgid "What additional resources does the post %s mention?"
+msgstr "Quelles ressources supplémentaires l'article %s mentionne-t-il ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:730
+#, php-format
+msgid "What is the main purpose of the post %s?"
+msgstr "Quel est le but principal de l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:732
+#, php-format
+msgid "Who is the post %s targeted to?"
+msgstr "À qui s'adresse l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:734
+#, php-format
+msgid "What do experts think about %s?"
+msgstr "Que pensent les experts de %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:736
+#, php-format
+msgid "What are the conclusions of the post %s?"
+msgstr "Quelles sont les conclusions de l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:738
+#, php-format
+msgid "What examples are cited in the post %s?"
+msgstr "Quels exemples sont cités dans l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:740
+#, php-format
+msgid "Why is the post %s relevant?"
+msgstr "Pourquoi l'article %s est-il pertinent ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:742
+#, php-format
+msgid "What format does the post %s have?"
+msgstr "Quel format a l'article %s ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:744
+#, php-format
+msgid "How does the post %s impact my area of interest?"
+msgstr "Quel impact l'article %s a-t-il sur mon domaine d'intérêt ?"
+
+#. translators: %s: Title of the post
+#: includes/ContentExtractor.php:746
+#, php-format
+msgid "What advice does the post %s give?"
+msgstr "Quels conseils l'article %s donne-t-il ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:753
+#, php-format
+msgid "What benefits can I get from the page %s?"
+msgstr "Quels avantages puis-je tirer de la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:755
+#, php-format
+msgid "How can the page %s help me?"
+msgstr "Comment la page %s peut-elle m'aider ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:757
+#, php-format
+msgid "What key details does the page %s provide?"
+msgstr "Quels détails clés la page %s fournit-elle ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:759
+#, php-format
+msgid "What type of information can I find on the page %s?"
+msgstr "Quel type d'informations puis-je trouver sur la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:761
+#, php-format
+msgid "What are the goals of the page %s?"
+msgstr "Quels sont les objectifs de la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:763
+#, php-format
+msgid "What actions can I take from the page %s?"
+msgstr "Quelles actions puis-je entreprendre depuis la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:765
+#, php-format
+msgid "Who can benefit from the page %s?"
+msgstr "Qui peut bénéficier de la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:767
+#, php-format
+msgid "What recent changes have been made to the page %s?"
+msgstr "Quels changements récents ont été apportés à la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:769
+#, php-format
+msgid "What is the main content of the page %s?"
+msgstr "Quel est le contenu principal de la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:771
+#, php-format
+msgid "What format does the page %s have?"
+msgstr "Quel format a la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:773
+#, php-format
+msgid "What are the most notable elements of the page %s?"
+msgstr "Quels sont les éléments les plus remarquables de la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:775
+#, php-format
+msgid "In which situations is the page %s useful?"
+msgstr "Dans quelles situations la page %s est-elle utile ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:777
+#, php-format
+msgid "What additional information can you find on the page %s?"
+msgstr "Quelles informations supplémentaires pouvez-vous trouver sur la page %s ?"
+
+#. translators: %s: Title of the page
+#: includes/ContentExtractor.php:779
+#, php-format
+msgid "How is the page %s organized?"
+msgstr "Comment la page %s est-elle organisée ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:784
+#, php-format
+msgid "How can I use the file %s?"
+msgstr "Comment puis-je utiliser le fichier %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:786
+#, php-format
+msgid "What type of file is %s?"
+msgstr "Quel type de fichier est %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:788
+#, php-format
+msgid "Why should I check the file %s?"
+msgstr "Pourquoi devrais-je vérifier le fichier %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:790
+#, php-format
+msgid "What important details does the file %s contain?"
+msgstr "Quels détails importants le fichier %s contient-il ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:792
+#, php-format
+msgid "In which situations can I use the file %s?"
+msgstr "Dans quelles situations puis-je utiliser le fichier %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:794
+#, php-format
+msgid "What additional resources does the file %s provide?"
+msgstr "Quelles ressources supplémentaires le fichier %s fournit-il ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:796
+#, php-format
+msgid "How is the file %s structured?"
+msgstr "Comment le fichier %s est-il structuré ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:798
+#, php-format
+msgid "What topics does the file %s cover?"
+msgstr "Quels sujets le fichier %s couvre-t-il ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:800
+#, php-format
+msgid "What methodology does the file %s use?"
+msgstr "Quelle méthodologie le fichier %s utilise-t-il ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:802
+#, php-format
+msgid "What key data can be extracted from the file %s?"
+msgstr "Quelles données clés peuvent être extraites du fichier %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:804
+#, php-format
+msgid "What critical information does the file %s contain?"
+msgstr "Quelles informations critiques le fichier %s contient-il ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:806
+#, php-format
+msgid "How does the file %s impact practice?"
+msgstr "Quel impact le fichier %s a-t-il sur la pratique ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:808
+#, php-format
+msgid "What tools do I need to work with the file %s?"
+msgstr "De quels outils ai-je besoin pour travailler avec le fichier %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:810
+#, php-format
+msgid "What are the risks or limitations of the file %s?"
+msgstr "Quels sont les risques ou les limitations du fichier %s ?"
+
+#. translators: %s: Name of the uploaded file
+#: includes/ContentExtractor.php:812
+#, php-format
+msgid "What versions of the file %s exist?"
+msgstr "Quelles versions du fichier %s existent ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:817
+#, php-format
+msgid "What pages are available in the menu for %s?"
+msgstr "Quelles pages sont disponibles dans le menu pour %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:819
+#, php-format
+msgid "How is the navigation menu structured on %s?"
+msgstr "Comment est structuré le menu de navigation sur %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:821
+#, php-format
+msgid "What is the URL for the page %s?"
+msgstr "Quelle est l'URL de la page %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:823
+#, php-format
+msgid "Where can I find the page %s in the menu?"
+msgstr "Où puis-je trouver la page %s dans le menu ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:825
+#, php-format
+msgid "What URL does the page %s lead to?"
+msgstr "À quelle URL mène la page %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:827
+#, php-format
+msgid "What can I expect to find at the URL of %s?"
+msgstr "À quoi puis-je m'attendre à trouver à l'URL de %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:829
+#, php-format
+msgid "How can I access the page %s through the menu?"
+msgstr "Comment puis-je accéder à la page %s via le menu ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:831
+#, php-format
+msgid "What is the URL address of %s?"
+msgstr "Quelle est l'adresse URL de %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:835
+#, php-format
+msgid "What custom content types are available on the site for %s?"
+msgstr "Quels types de contenu personnalisés sont disponibles sur le site pour %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:837
+#, php-format
+msgid "What type of custom post is %s?"
+msgstr "Quel type d'article personnalisé est %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:839
+#, php-format
+msgid "What special content can I find in %s?"
+msgstr "Quel contenu spécial puis-je trouver dans %s ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:841
+#, php-format
+msgid "How can I find more information about %s on the site?"
+msgstr "Comment puis-je trouver plus d'informations sur %s sur le site ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:843
+#, php-format
+msgid "What differences are there between %s and other content types on the site?"
+msgstr "Quelles sont les différences entre %s et les autres types de contenu sur le site ?"
+
+#. translators: %s: Title of the content
+#: includes/ContentExtractor.php:845
+#, php-format
+msgid "How do I interact with the custom post %s?"
+msgstr "Comment interagir avec l'article personnalisé %s ?"
+
+#: includes/FileHandler.php:23
+msgid "Error uploading the file: "
+msgstr "Erreur lors du téléchargement du fichier : "
+
+#: includes/FileHandler.php:31
+#: includes/FileHandler.php:32
+msgid "Invalid file type. Only .txt files are allowed."
+msgstr "Type de fichier invalide. Seuls les fichiers .txt sont autorisés."
+
+#: includes/FileHandler.php:51
+msgid "Error moving the uploaded file."
+msgstr "Erreur lors du déplacement du fichier téléchargé."
+
+#: includes/FileHandler.php:74
+msgid "Error saving file information to the database."
+msgstr "Erreur lors de l'enregistrement des informations du fichier dans la base de données."
+
+#: includes/FileHandler.php:128
+#: includes/FileHandler.php:158
+msgid "Security check failed"
+msgstr "Échec de la vérification de sécurité"
+
+#: includes/FileHandler.php:132
+msgid "You do not have permission to upload files"
+msgstr "Vous n'avez pas la permission de télécharger des fichiers"
+
+#: includes/FileHandler.php:162
+msgid "You do not have permission to delete files"
+msgstr "Vous n'avez pas la permission de supprimer des fichiers"
+
+#: includes/FileHandler.php:204
+msgid "Could not read the text file."
+msgstr "Impossible de lire le fichier texte."
+
+#: includes/FileHandler.php:217
+msgid "The file exceeds the maximum size allowed by PHP."
+msgstr "Le fichier dépasse la taille maximale autorisée par PHP."
+
+#: includes/FileHandler.php:219
+msgid "The file exceeds the maximum size allowed by the form."
+msgstr "Le fichier dépasse la taille maximale autorisée par le formulaire."
+
+#: includes/FileHandler.php:221
+msgid "The file was only partially uploaded."
+msgstr "Le fichier n'a été que partiellement téléchargé."
+
+#: includes/FileHandler.php:223
+msgid "No file was uploaded."
+msgstr "Aucun fichier n'a été téléchargé."
+
+#: includes/FileHandler.php:225
+msgid "Missing temporary folder."
+msgstr "Dossier temporaire manquant."
+
+#: includes/FileHandler.php:227
+msgid "Error writing file to disk."
+msgstr "Erreur d'écriture du fichier sur le disque."
+
+#: includes/FileHandler.php:229
+msgid "A PHP extension stopped the file upload."
+msgstr "Une extension PHP a arrêté le téléchargement du fichier."
+
+#: includes/FileHandler.php:231
+msgid "Unknown file upload error."
+msgstr "Erreur de téléchargement de fichier inconnue."
+
+#: includes/FileHandler.php:287
+msgid "File not found."
+msgstr "Fichier non trouvé."
+
+#: includes/FileHandler.php:314
+msgid "Error deleting file from database."
+msgstr "Erreur lors de la suppression du fichier de la base de données."
+
+#: includes/OpenaiApi.php:85
+#: includes/OpenaiApi.php:131
+#: includes/OpenaiApi.php:205
+#: includes/OpenaiApi.php:281
+#: includes/OpenaiApi.php:423
+#: includes/OpenaiApi.php:551
+#: includes/OpenaiApi.php:622
+#: includes/OpenaiApi.php:796
+#: includes/OpenaiApi.php:897
+#: includes/OpenaiApi.php:947
+#: includes/OpenaiApi.php:999
+#: includes/RagManager.php:1510
+msgid "OpenAI API key has not been configured."
+msgstr "La clé API OpenAI n'a pas été configurée."
+
+#: includes/OpenaiApi.php:109
+msgid "Unknown error when verifying API key."
+msgstr "Erreur inconnue lors de la vérification de la clé API."
+
+#: includes/OpenaiApi.php:127
+#: includes/OpenaiApi.php:418
+msgid "Too many requests. Please wait a minute."
+msgstr "Trop de requêtes. Veuillez patienter une minute."
+
+#: includes/OpenaiApi.php:134
+msgid "Input text for embedding cannot be empty."
+msgstr "Le texte d'entrée pour l'intégration ne peut pas être vide."
+
+#: includes/OpenaiApi.php:138
+msgid "Embedding model name must be specified."
+msgstr "Le nom du modèle d'intégration doit être spécifié."
+
+#: includes/OpenaiApi.php:153
+msgid "Error encoding request body: "
+msgstr "Erreur d'encodage du corps de la requête : "
+
+#: includes/OpenaiApi.php:178
+msgid "Unknown API error during embedding."
+msgstr "Erreur API inconnue lors de l'intégration."
+
+#: includes/OpenaiApi.php:192
+msgid "Unexpected response structure from OpenAI API."
+msgstr "Structure de réponse inattendue de l'API OpenAI."
+
+#: includes/OpenaiApi.php:257
+msgid "Unknown error uploading the file."
+msgstr "Erreur inconnue lors du téléchargement du fichier."
+
+#: includes/OpenaiApi.php:277
+msgid "Training rate limit reached. Please wait."
+msgstr "Limite de taux d'entraînement atteinte. Veuillez patienter."
+
+#: includes/OpenaiApi.php:285
+msgid "No content available for training the model."
+msgstr "Aucun contenu disponible pour l'entraînement du modèle."
+
+#. translators: %d is the number of examples found
+#: includes/OpenaiApi.php:297
+#, php-format
+msgid "At least 3 examples are needed for fine-tuning, only %d found"
+msgstr "Au moins 3 exemples sont nécessaires pour l'affinage, seulement %d trouvés"
+
+#: includes/OpenaiApi.php:340
+msgid "Unknown error creating the fine-tuning."
+msgstr "Erreur inconnue lors de la création de l'affinage."
+
+#: includes/OpenaiApi.php:375
+msgid "Model training has started."
+msgstr "L'entraînement du modèle a commencé."
+
+#: includes/OpenaiApi.php:477
+msgid "You are a helpful assistant, you can only answer based on the content you were trained on. If the question cant be answered with that content, it indicates that you dont have enough information. Format your responses with HTML tags like <p>, <ul>, <li>, <strong>, and <br> for better readability. Keep responses concise and to the point."
+msgstr "Vous êtes un assistant utile, vous ne pouvez répondre que sur la base du contenu sur lequel vous avez été entraîné. Si la question ne peut pas être répondue avec ce contenu, cela indique que vous n'avez pas suffisamment d'informations. Formatez vos réponses avec des balises HTML telles que <p>, <ul>, <li>, <strong> et <br> pour une meilleure lisibilité. Gardez les réponses concises et pertinentes."
+
+#: includes/OpenaiApi.php:527
+msgid "Error getting response from model."
+msgstr "Erreur lors de l'obtention de la réponse du modèle."
+
+#: includes/OpenaiApi.php:539
+#: includes/OpenaiApi.php:610
+#: includes/OpenaiApi.php:696
+msgid "Unknown response from OpenAI."
+msgstr "Réponse inconnue d'OpenAI."
+
+#: includes/OpenaiApi.php:560
+msgid "You are an expert assistant specialized in improving training datasets for chatbots. Your goal is to generate high-quality, diverse, and relevant training examples that cover a wide range of potential user queries and scenarios."
+msgstr "Vous êtes un assistant expert spécialisé dans l'amélioration des ensembles de données d'entraînement pour les chatbots. Votre objectif est de générer des exemples d'entraînement de haute qualité, diversifiés et pertinents qui couvrent un large éventail de requêtes et de scénarios d'utilisateurs potentiels."
+
+#: includes/OpenaiApi.php:599
+#: includes/OpenaiApi.php:684
+msgid "Error getting model response."
+msgstr "Erreur lors de l'obtention de la réponse du modèle."
+
+#: includes/OpenaiApi.php:631
+msgid ""
+"You are an AI training data specialist with expertise in natural language processing and conversational AI. Your task is to analyze the provided content thoroughly and generate high-quality question-answer pairs that:\n"
+"\n"
+"1. Cover the full spectrum of information presented in the content\n"
+"2. Include both straightforward factual questions and more complex inferential questions\n"
+"3. Represent different question types (what, how, why, when, where, who, etc.)\n"
+"4. Anticipate real user queries by incorporating common phrasing variations\n"
+"5. Include edge cases and less obvious but relevant questions users might ask\n"
+"6. Prioritize specificity and contextual relevance over generic questions\n"
+"7. Ensure answers are accurate, comprehensive, and directly extracted from the source material\n"
+"8. Format output exclusively as valid JSON with no surrounding text\n"
+"\n"
+"Return the result as an array of JSON objects with \"question\" and \"answer\" fields only, like:\n"
+"[{\"question\": \"detailed question 1\", \"answer\": \"comprehensive answer 1\"}, {...}]"
+msgstr ""
+"Vous êtes un spécialiste des données d'entraînement IA, expert en traitement du langage naturel et en IA conversationnelle. Votre tâche consiste à analyser en profondeur le contenu fourni et à générer des paires question-réponse de haute qualité qui :\n"
+"\n"
+"1. Couvrent l'intégralité des informations présentées dans le contenu\n"
+"2. Incluent à la fois des questions factuelles simples et des questions inférentielles plus complexes\n"
+"3. Représentent différents types de questions (quoi, comment, pourquoi, quand, où, qui, etc.)\n"
+"4. Anticipent les requêtes réelles des utilisateurs en intégrant des variations de formulation courantes\n"
+"5. Incluent des cas limites et des questions moins évidentes mais pertinentes que les utilisateurs pourraient poser\n"
+"6. Privilégient la spécificité et la pertinence contextuelle plutôt que les questions génériques\n"
+"7. Garantissent que les réponses sont précises, complètes et directement extraites du matériel source\n"
+"8. Formatent la sortie exclusivement en JSON valide sans texte environnant\n"
+"\n"
+"Retournez le résultat sous forme de tableau d'objets JSON avec uniquement les champs \"question\" et \"answer\", comme :\n"
+"[{\"question\": \"question détaillée 1\", \"answer\": \"réponse complète 1\"}, {...}]"
+
+#: includes/OpenaiApi.php:820
+msgid "Error checking model status."
+msgstr "Erreur lors de la vérification du statut du modèle."
+
+#: includes/OpenaiApi.php:921
+msgid "Error getting models."
+msgstr "Erreur lors de l'obtention des modèles."
+
+#: includes/OpenaiApi.php:933
+msgid "Model in training"
+msgstr "Modèle en entraînement"
+
+#. translators: %s is the current status of the model (e.g., 'completed', 'training', 'failed')
+#: includes/OpenaiApi.php:936
+#, php-format
+msgid "Status: %s"
+msgstr "Statut : %s"
+
+#: includes/OpenaiApi.php:1049
+msgid "OpenAI API key not configured."
+msgstr "Clé API OpenAI non configurée."
+
+#: includes/OpenaiApi.php:1066
+msgid "No status found in API response."
+msgstr "Aucun statut trouvé dans la réponse de l'API."
+
+#: includes/RagManager.php:26
+msgid "FTC RAG Plugin Error:"
+msgstr "Erreur du plugin FTC RAG :"
+
+#: includes/RagManager.php:26
+msgid "CEREBROLY_OpenAI_API class not found. Communication with OpenAI will not work."
+msgstr "Classe CEREBROLY_OpenAI_API introuvable. La communication avec OpenAI ne fonctionnera pas."
+
+#: includes/RagManager.php:311
+#: includes/RagManager.php:954
+msgid "Job not found"
+msgstr "Tâche introuvable"
+
+#: includes/RagManager.php:319
+msgid "WooCommerce products"
+msgstr "Produits WooCommerce"
+
+#. translators: %1$d: Processed items count, %2$d: Total items count
+#: includes/RagManager.php:329
+#, php-format
+msgid "Processing %1$d of %2$d items"
+msgstr "Traitement de %1$d sur %2$d éléments"
+
+#: includes/RagManager.php:363
+msgid "No content found to index. Check your content sources."
+msgstr "Aucun contenu trouvé à indexer. Vérifiez vos sources de contenu."
+
+#. translators: %s: Database error message
+#: includes/RagManager.php:383
+#, php-format
+msgid "Failed to create indexing job: %s"
+msgstr "Échec de la création de la tâche d'indexation : %s"
+
+#: includes/RagManager.php:392
+msgid "Indexing started successfully."
+msgstr "L'indexation a démarré avec succès."
+
+#: includes/RagManager.php:522
+msgid "You are a specialized assistant for the website. Answer queries based only on the information from the following context. If the information is not in the context, honestly indicate that you do not have that information."
+msgstr "Vous êtes un assistant spécialisé pour le site web. Répondez aux requêtes uniquement sur la base des informations du contexte suivant. Si l'information n'est pas dans le contexte, indiquez honnêtement que vous n'avez pas cette information."
+
+#: includes/RagManager.php:588
+msgid "OpenAI API key has not been configured. Please configure the API key in the settings page."
+msgstr "La clé API OpenAI n'a pas été configurée. Veuillez configurer la clé API dans la page des réglages."
+
+#. translators: %s: Error message from OpenAI connection
+#: includes/RagManager.php:616
+#, php-format
+msgid "Connection error with OpenAI: %s"
+msgstr "Erreur de connexion avec OpenAI : %s"
+
+#: includes/RagManager.php:624
+msgid "Unknown error"
+msgstr "Erreur inconnue"
+
+#. translators: %s: Error message from OpenAI API
+#: includes/RagManager.php:626
+#, php-format
+msgid "OpenAI API error: %s"
+msgstr "Erreur de l'API OpenAI : %s"
+
+#: includes/RagManager.php:631
+msgid "OpenAI API did not return a valid embedding. Check your API key and permissions."
+msgstr "L'API OpenAI n'a pas renvoyé d'intégration valide. Vérifiez votre clé API et vos permissions."
+
+#: includes/RagManager.php:850
+msgid "Price:"
+msgstr "Prix :"
+
+#: includes/RagManager.php:851
+msgid "SKU:"
+msgstr "SKU :"
+
+#: includes/RagManager.php:852
+msgid "Short description:"
+msgstr "Description courte :"
+
+#. translators: %1$d: Current part number, %2$d: Total number of parts
+#: includes/RagManager.php:875
+#: includes/RagManager.php:1252
+#, php-format
+msgid "(Part %1$d of %2$d)"
+msgstr "(Partie %1$d sur %2$d)"
+
+#: includes/RagManager.php:977
+msgid "No items to index"
+msgstr "Aucun élément à indexer"
+
+#: includes/RagManager.php:1050
+msgid "Processing completed"
+msgstr "Traitement terminé"
+
+#: includes/RagManager.php:1077
+msgid "No job ID provided"
+msgstr "Aucun ID de tâche fourni"
+
+#. translators: %d: (Part %d)
+#: includes/RagManager.php:1137
+#, php-format
+msgid "(Part %d)"
+msgstr "(Partie %d)"
+
+#: includes/RagManager.php:1460
+msgid "No relevant documents found to answer the query."
+msgstr "Aucun document pertinent trouvé pour répondre à la requête."
+
+#: includes/RagManager.php:1462
+msgid "Sorry, I don't have enough information to answer this query."
+msgstr "Désolé, je n'ai pas suffisamment d'informations pour répondre à cette requête."
+
+#: includes/RagManager.php:1477
+msgid "You are a specialized assistant. Answer based only on the information from the provided context."
+msgstr "Vous êtes un assistant spécialisé. Répondez uniquement sur la base des informations du contexte fourni."
+
+#: includes/RagManager.php:1497
+msgid "Context:"
+msgstr "Contexte :"
+
+#: includes/RagManager.php:1512
+msgid "Error: OpenAI API not configured."
+msgstr "Erreur : API OpenAI non configurée."
+
+#. translators: %s: Error message describing the connection issue
+#: includes/RagManager.php:1534
+#, php-format
+msgid "Connection error: %s"
+msgstr "Erreur de connexion : %s"
+
+#: includes/RagManager.php:1536
+#: includes/RagManager.php:1552
+msgid "Error generating response."
+msgstr "Erreur lors de la génération de la réponse."
+
+#: includes/RagManager.php:1545
+msgid "Unknown error generating response."
+msgstr "Erreur inconnue lors de la génération de la réponse."
+
+#. translators: %s: Error message from the API
+#: includes/RagManager.php:1550
+#, php-format
+msgid "API error: %s"
+msgstr "Erreur API : %s"
+
+#: includes/RagManager.php:1571
+msgid "Unknown response format."
+msgstr "Format de réponse inconnu."
+
+#: includes/RagManager.php:1573
+msgid "Error processing response."
+msgstr "Erreur lors du traitement de la réponse."
+
+#: includes/RagManager.php:1685
+msgid "RAG system initialized correctly"
+msgstr "Système RAG initialisé correctement"
+
+#: includes/RagManager.php:1687
+msgid "Error initializing RAG system"
+msgstr "Erreur lors de l'initialisation du système RAG"
+
+#: includes/RagManager.php:1711
+msgid "Empty query"
+msgstr "Requête vide"
+
+#: includes/RagManager.php:1745
+msgid "RAG system reset correctly"
+msgstr "Système RAG réinitialisé correctement"
+
+#: includes/RagManager.php:1747
+msgid "Error resetting RAG system"
+msgstr "Erreur lors de la réinitialisation du système RAG"
+
+#: includes/RagManager.php:1776
+msgid "RAG system not initialized"
+msgstr "Système RAG non initialisé"
+
+#: includes/RagManager.php:1792
+msgid "No active indexing jobs"
+msgstr "Aucune tâche d'indexation active"
+
+#. translators: %1$d: number of processed items, %2$d: total number of items
+#: includes/RagManager.php:1803
+#, php-format
+msgid "Processing %1$d of %2$d items."
+msgstr "Traitement de %1$d sur %2$d éléments."
+
+#: includes/RagManager.php:1830
+#: includes/RagManager.php:1885
+msgid "RAG system is not initialized"
+msgstr "Le système RAG n'est pas initialisé"
+
+#: includes/RagManager.php:1927
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: includes/RagManager.php:1930
+msgid "Post/Page"
+msgstr "Article/Page"
+
+#: intelli.php:280
+msgid "Type your question..."
+msgstr "Tapez votre question..."
+
+#: intelli.php:281
+msgid "Send"
+msgstr "Envoyer"
+
+#: intelli.php:334
+msgid "The RAG system is not properly configured. Please go to the admin to initialize and configure RAG."
+msgstr "Le système RAG n'est pas correctement configuré. Veuillez vous rendre dans l'administration pour initialiser et configurer RAG."
+
+#: intelli.php:336
+msgid "There is no trained model available."
+msgstr "Aucun modèle entraîné n'est disponible."
+
+#: intelli.php:596
+msgid "RAG System Configuration"
+msgstr "Configuration du système RAG"
+
+#: intelli.php:600
+msgid "Enable RAG"
+msgstr "Activer RAG"
+
+#: intelli.php:604
+msgid "Use Retrieval-Augmented Generation (RAG) instead of fine-tuning"
+msgstr "Utilisez la génération augmentée par récupération (RAG) au lieu de l'affinage"
+
+#: intelli.php:607
+msgid "RAG is a more dynamic approach that doesn't require retraining the model when content changes."
+msgstr "RAG est une approche plus dynamique qui ne nécessite pas de réentraîner le modèle lorsque le contenu change."
+
+#: intelli.php:634
+msgid "Environment Variable"
+msgstr "Variable d'environnement"
+
+#: intelli.php:638
+msgid "wp-config.php"
+msgstr "wp-config.php"
+
+#: intelli.php:641
+msgid "Option"
+msgstr "Option"

@@ -1,0 +1,158 @@
+/**
+ * Styles for the chat appearance settings page
+ * File: admin/css/appearance.css
+ */
+
+/* =================================================================
+   CSS VARIABLES
+================================================================= */
+:root {
+    --cerebroly-primary: #2271b1; /* Primary color */
+    --cerebroly-primary-hover: #135e96; /* Hover state for primary color */
+    --cerebroly-primary-light: #f0f6fc; /* Light shade of primary color */
+    --cerebroly-success: #00a32a; /* Success color */
+    --cerebroly-border: #c3c4c7; /* Default border color */
+    --cerebroly-border-light: #e0e0e0; /* Light border color */
+    --cerebroly-text: #1d2327; /* Default text color */
+    --cerebroly-text-light: #646970; /* Light text color */
+    --cerebroly-bg-white: #ffffff; /* Background color for white elements */
+    --cerebroly-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Default shadow */
+    --cerebroly-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.15); /* Hover shadow */
+    --cerebroly-transition: all 0.2s ease; /* Default transition */
+}
+
+/* =================================================================
+   CUSTOM METABOXES
+================================================================= */
+.metabox-holder .postbox {
+    border: 1px solid var(--cerebroly-border-light); /* Light border for metabox */
+    box-shadow: var(--cerebroly-shadow); /* Default shadow */
+    transition: var(--cerebroly-transition); /* Smooth transition */
+}
+
+.metabox-holder .postbox:hover {
+    box-shadow: var(--cerebroly-shadow-hover); /* Hover shadow effect */
+}
+
+.postbox .inside {
+    padding: 20px; /* Inner padding for metabox content */
+}
+
+.description {
+    margin-bottom: 20px; /* Space below description */
+    font-style: italic; /* Italic text style */
+    color: var(--cerebroly-text-light); /* Light text color */
+    font-size: 13px; /* Small font size */
+    line-height: 1.5; /* Line height for readability */
+}
+
+/* =================================================================
+   THEME SELECTOR - GRID LAYOUT
+================================================================= */
+.cerebroly-theme-selector {
+    display: grid; /* Grid layout for theme options */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
+    margin-top: 15px; /* Space above the grid */
+}
+
+.cerebroly-theme-option {
+    position: relative; /* Relative positioning for child elements */
+    transition: var(--cerebroly-transition); /* Smooth transition */
+}
+
+.cerebroly-theme-card {
+    display: block; /* Block-level element */
+    background: var(--cerebroly-bg-white); /* White background */
+    border: 2px solid var(--cerebroly-border-light); /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: var(--cerebroly-transition); /* Smooth transition */
+    position: relative; /* Relative positioning */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.cerebroly-theme-card:hover {
+    border-color: var(--cerebroly-primary); /* Change border color on hover */
+    box-shadow: var(--cerebroly-shadow-hover); /* Add shadow on hover */
+    transform: translateY(-2px); /* Slight upward movement */
+}
+
+.cerebroly-theme-option.selected .cerebroly-theme-card {
+    border-color: var(--cerebroly-primary); /* Highlight selected theme */
+    background: var(--cerebroly-primary-light); /* Light background for selected theme */
+    box-shadow: 0 0 0 1px var(--cerebroly-primary); /* Outline for selected theme */
+}
+
+/* Theme image */
+.cerebroly-theme-image {
+    position: relative; /* Relative positioning */
+    margin-bottom: 15px; /* Space below the image */
+    border-radius: 6px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow content */
+    background: #f6f7f7; /* Light gray background */
+    aspect-ratio: 16/10; /* Maintain aspect ratio */
+}
+
+.cerebroly-theme-image img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the container */
+    transition: var(--cerebroly-transition); /* Smooth transition */
+}
+
+.cerebroly-theme-card:hover .cerebroly-theme-image img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Selection checkmark */
+.cerebroly-theme-check {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Position from the top */
+    right: 10px; /* Position from the right */
+    width: 24px; /* Width of the checkmark */
+    height: 24px; /* Height of the checkmark */
+    background: var(--cerebroly-success); /* Success color */
+    border-radius: 50%; /* Circular shape */
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    opacity: 0; /* Hidden by default */
+    transform: scale(0.8); /* Slightly smaller by default */
+    transition: var(--cerebroly-transition); /* Smooth transition */
+}
+
+.cerebroly-theme-option.selected .cerebroly-theme-check {
+    opacity: 1; /* Visible when selected */
+    transform: scale(1); /* Full size */
+}
+
+.cerebroly-theme-check .dashicons {
+    color: white; /* White icon color */
+    font-size: 16px; /* Icon size */
+    width: 16px; /* Icon width */
+    height: 16px; /* Icon height */
+}
+
+/* =================================================================
+   RESPONSIVE DESIGN
+================================================================= */
+@media (max-width: 768px) {
+    .cerebroly-theme-selector {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    
+    .cerebroly-icon-selector {
+        gap: 10px; /* Reduced gap for icons */
+    }
+    
+    .cerebroly-icon-preview {
+        width: 50px; /* Smaller icon preview */
+        height: 50px; /* Smaller icon preview */
+    }
+    
+    .cerebroly-icon-emoji {
+        font-size: 20px; /* Smaller emoji size */
+    }
+}
