@@ -1054,16 +1054,18 @@ Return the result as an array of JSON objects with "question" and "answer" field
             $data = json_decode(wp_remote_retrieve_body($response), true);
             if (isset($data['data'])) {
                 usort($data['data'], function ($a, $b) {
-                    return strtotime($b['created_at']) - strtotime($a['created_at']);
+                    return $b['created_at'] - $a['created_at'];
                 });
 
-                foreach (array_slice($data['data'], 0, 5) as $model) {
-                    if (!empty($model['fine_tuned_model'])) {
-                        $fine_tuned[] = [
-                            'id' => $model['fine_tuned_model'],
-                            'label' => $model['fine_tuned_model'] . ' (' . $model['status'] . ')',
-                        ];
-                    }
+                $completed = array_filter($data['data'], function ($m) {
+                    return !empty($m['fine_tuned_model']);
+                });
+
+                foreach (array_slice($completed, 0, 5) as $model) {
+                    $fine_tuned[] = [
+                        'id'    => $model['fine_tuned_model'],
+                        'label' => $model['fine_tuned_model'] . ' (' . $model['status'] . ')',
+                    ];
                 }
             }
         }
