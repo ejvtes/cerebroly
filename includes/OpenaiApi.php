@@ -941,17 +941,49 @@ Return the result as an array of JSON objects with "question" and "answer" field
 
         $models = [];
 
-        // Base models (hardcoded)
-        $models['base'] = [
-            ['id' => 'gpt-3.5-turbo'],
-            ['id' => 'gpt-4'],
-            ['id' => 'gpt-4-turbo'],
-            ['id' => 'gpt-3.5-turbo-1106'],
-            ['id' => 'gpt-4-1106-preview'],
+        // Fine-tunable base models from API
+        $finetune_whitelist = [
+            'gpt-4o-2024-08-06',
+            'gpt-4o-mini-2024-07-18',
+            'gpt-4-0613',
+            'gpt-3.5-turbo-0125',
+            'gpt-3.5-turbo-1106',
+            'gpt-3.5-turbo-0613',
         ];
 
-        // Last 5 fine-tuned models by date
-        $response = wp_remote_get($this->api_url . '/fine_tuning/jobs', [
+        $base_response = wp_remote_get($this->api_url . '/models', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $this->get_api_key(),
+                'Content-Type'  => 'application/json',
+            ],
+            'timeout' => 30,
+        ]);
+
+        $base = [];
+        if (!is_wp_error($base_response)) {
+            $base_data = json_decode(wp_remote_retrieve_body($base_response), true);
+            if (!empty($base_data['data'])) {
+                $matched = array_filter($base_data['data'], function ($m) use ($finetune_whitelist) {
+                    return in_array($m['id'], $finetune_whitelist, true);
+                });
+                usort($matched, function ($a, $b) {
+                    return $b['created'] - $a['created'];
+                });
+                foreach (array_slice($matched, 0, 5) as $m) {
+                    $base[] = ['id' => $m['id']];
+                }
+            }
+        }
+        if (empty($base)) {
+            $base = [
+                ['id' => 'gpt-4o-mini-2024-07-18'],
+                ['id' => 'gpt-3.5-turbo-0125'],
+            ];
+        }
+        $models['base'] = $base;
+
+        // Last 5 completed fine-tuned models
+        $response = wp_remote_get($this->api_url . '/fine_tuning/jobs?limit=100', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $this->get_api_key(),
                 'Content-Type' => 'application/json',
@@ -964,18 +996,19 @@ Return the result as an array of JSON objects with "question" and "answer" field
         if (!is_wp_error($response)) {
             $data = json_decode(wp_remote_retrieve_body($response), true);
             if (isset($data['data'])) {
-                // Sort by creation date
                 usort($data['data'], function ($a, $b) {
-                    return strtotime($b['created_at']) - strtotime($a['created_at']);
+                    return $b['created_at'] - $a['created_at'];
                 });
 
-                foreach (array_slice($data['data'], 0, 5) as $model) {
-                    if (!empty($model['fine_tuned_model'])) {
-                        $fine_tuned[] = [
-                            'id' => $model['fine_tuned_model'],
-                            'status' => $model['status'],
-                        ];
-                    }
+                $completed = array_filter($data['data'], function ($m) {
+                    return !empty($m['fine_tuned_model']);
+                });
+
+                foreach (array_slice($completed, 0, 10) as $model) {
+                    $fine_tuned[] = [
+                        'id'     => $model['fine_tuned_model'],
+                        'status' => $model['status'],
+                    ];
                 }
             }
         }
@@ -1039,8 +1072,8 @@ Return the result as an array of JSON objects with "question" and "answer" field
             ];
         }
 
-        // Get the last 5 fine-tuned models
-        $response = wp_remote_get($this->api_url . '/fine_tuning/jobs', [
+        // Get fine-tuned models (limit=100 to cover jobs with failed/running status)
+        $response = wp_remote_get($this->api_url . '/fine_tuning/jobs?limit=100', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $this->get_api_key(),
                 'Content-Type' => 'application/json',
@@ -1061,7 +1094,7 @@ Return the result as an array of JSON objects with "question" and "answer" field
                     return !empty($m['fine_tuned_model']);
                 });
 
-                foreach (array_slice($completed, 0, 5) as $model) {
+                foreach (array_slice($completed, 0, 10) as $model) {
                     $fine_tuned[] = [
                         'id'    => $model['fine_tuned_model'],
                         'label' => $model['fine_tuned_model'] . ' (' . $model['status'] . ')',
