@@ -991,14 +991,53 @@ Return the result as an array of JSON objects with "question" and "answer" field
             return new WP_Error('no_api_key', __('OpenAI API key has not been configured.', 'cerebroly'));
         }
 
-        // Predefined base models (hardcoded)
-        $base_models = [
-            ['id' => 'gpt-3.5-turbo', 'label' => 'GPT-3.5 Turbo'],
-            ['id' => 'gpt-4', 'label' => 'GPT-4'],
-            ['id' => 'gpt-4-turbo', 'label' => 'GPT-4 Turbo'],
-            ['id' => 'gpt-3.5-turbo-1106', 'label' => 'GPT-3.5 Turbo (Nov 2023)'],
-            ['id' => 'gpt-4-1106-preview', 'label' => 'GPT-4 (Nov 2023)'],
+        // Fine-tunable models: fetch from /v1/models and filter by known fine-tunable IDs
+        $finetune_whitelist = [
+            'gpt-4o-2024-08-06'      => 'GPT-4o (2024-08-06)',
+            'gpt-4o-mini-2024-07-18' => 'GPT-4o Mini (2024-07-18)',
+            'gpt-4-0613'             => 'GPT-4 (0613)',
+            'gpt-3.5-turbo-0125'     => 'GPT-3.5 Turbo (0125)',
+            'gpt-3.5-turbo-1106'     => 'GPT-3.5 Turbo (1106)',
+            'gpt-3.5-turbo-0613'     => 'GPT-3.5 Turbo (0613)',
         ];
+
+        $models_response = wp_remote_get($this->api_url . '/models', [
+            'headers' => [
+                'Authorization' => 'Bearer ' . $this->get_api_key(),
+                'Content-Type'  => 'application/json',
+            ],
+            'timeout' => 30,
+        ]);
+
+        $base_models = [];
+
+        if (!is_wp_error($models_response)) {
+            $models_data = json_decode(wp_remote_retrieve_body($models_response), true);
+            if (!empty($models_data['data'])) {
+                // Keep only whitelisted fine-tunable models
+                $matched = array_filter($models_data['data'], function ($m) use ($finetune_whitelist) {
+                    return isset($finetune_whitelist[$m['id']]);
+                });
+                // Sort by created date descending
+                usort($matched, function ($a, $b) {
+                    return $b['created'] - $a['created'];
+                });
+                foreach (array_slice($matched, 0, 5) as $m) {
+                    $base_models[] = [
+                        'id'    => $m['id'],
+                        'label' => $finetune_whitelist[$m['id']],
+                    ];
+                }
+            }
+        }
+
+        // Fallback if API call failed or returned no matching models
+        if (empty($base_models)) {
+            $base_models = [
+                ['id' => 'gpt-4o-mini-2024-07-18', 'label' => 'GPT-4o Mini (2024-07-18)'],
+                ['id' => 'gpt-3.5-turbo-0125',     'label' => 'GPT-3.5 Turbo (0125)'],
+            ];
+        }
 
         // Get the last 5 fine-tuned models
         $response = wp_remote_get($this->api_url . '/fine_tuning/jobs', [
