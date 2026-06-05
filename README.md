@@ -1,4 +1,4 @@
-# Cerebroly — Plugin de IA para WordPress con RAG y fine-tuning
+# Plugin WordPress RAG - Fine-tuning
 
 Convierte cualquier WordPress en un agente conversacional impulsado por OpenAI. Entrena la IA con tu propio contenido mediante RAG o fine-tuning, y despliega el chat en tu sitio o en dominios externos.
 
